@@ -1,0 +1,73 @@
+2021-09-16 12:35:12 INFO  Ej5:13 - Moviendo el archivo /tmp/d1/f11.txt a /tmp/d1/f12.txt
+2021-09-16 12:35:12 INFO  Ej5:13 - Moviendo el archivo /tmp/d2/f21.txt a /tmp/d1/f21.txt
+2021-09-16 12:35:12 INFO  Ej5:19 - Eliminando directorio /tmp/d2
+2021-09-16 12:35:30 INFO  Ejercicio4:25 - Creando directorio d1...
+2021-09-16 12:35:30 INFO  Ejercicio4:27 - Creando fichero f11.txt
+2021-09-16 12:35:30 INFO  Ejercicio4:29 - Creando directorio d2...
+2021-09-16 12:35:30 INFO  Ejercicio4:31 - Creando fichero f21.txt
+2021-09-16 12:35:38 INFO  Ej5:13 - Moviendo el archivo /tmp/d1/f11.txt a /tmp/d1/f12.txt
+2021-09-16 12:35:38 INFO  Ej5:13 - Moviendo el archivo /tmp/d2/f21.txt a /tmp/d1/f21.txt
+2021-09-16 12:35:38 INFO  Ej5:19 - Eliminando directorio /tmp/d2
+2021-09-16 12:40:47 INFO  Ejercicio5:14 - Renaming/moving /tmp/d1/f11.txt to new path: /tmp/d1/f12.txt
+2021-09-16 12:40:47 ERROR Ejercicio5:18 - Couldn't mover or rename /tmp/d1/f11.txt
+2021-09-16 12:40:47 INFO  Ejercicio5:14 - Renaming/moving /tmp/d2/f21.txt to new path: tmp/d1/f21.txt
+2021-09-16 12:40:47 ERROR Ejercicio5:18 - Couldn't mover or rename /tmp/d2/f21.txt
+2021-09-16 12:40:47 INFO  Ejercicio5:24 - Deleting /tmp/d2/
+2021-09-16 12:40:47 ERROR Ejercicio5:28 - Folder doesn't exists
+2021-09-20 12:40:19 INFO  Ejercicio4:25 - Creando directorio d1...
+2021-09-20 12:40:19 INFO  Ejercicio4:27 - Creando fichero f11.txt
+2021-09-20 12:40:19 INFO  Ejercicio4:29 - Creando directorio d2...
+2021-09-20 12:40:19 INFO  Ejercicio4:31 - Creando fichero f21.txt
+2021-09-20 13:14:31 INFO  Ejercicio6:21 - Nombre del archivo: f11.txt
+2021-09-20 13:14:31 INFO  Ejercicio6:23 - Camino absoluto: /tmp/d1/f11.txt
+2021-09-20 13:14:31 INFO  Ejercicio6:25 - Tamaño: 0
+2021-09-20 13:14:31 INFO  Ejercicio6:28 - Es un fichero
+2021-09-20 13:14:31 INFO  Ejercicio6:33 - Última modificación: 1632134419187
+2021-09-20 13:14:31 INFO  Ejercicio6:36 - Tiene permisos de escritura
+2021-09-20 13:14:31 INFO  Ejercicio6:42 - Tiene permisos de lectura
+2021-09-20 13:14:31 INFO  Ejercicio6:50 - No tiene permisos de ejecución
+2021-09-20 13:16:53 INFO  Ejercicio6:21 - Nombre del archivo: f11.txt
+2021-09-20 13:16:53 INFO  Ejercicio6:23 - Camino absoluto: /tmp/d1/f11.txt
+2021-09-20 13:16:53 INFO  Ejercicio6:25 - Tamaño: 12
+2021-09-20 13:16:53 INFO  Ejercicio6:28 - Es un fichero
+2021-09-20 13:16:53 INFO  Ejercicio6:33 - Última modificación: 1632136605271
+2021-09-20 13:16:53 INFO  Ejercicio6:36 - Tiene permisos de escritura
+2021-09-20 13:16:53 INFO  Ejercicio6:42 - Tiene permisos de lectura
+2021-09-20 13:16:53 INFO  Ejercicio6:50 - No tiene permisos de ejecución
+2021-09-20 14:08:18 INFO  PrintLog:23 - 2021-09-16 12:35:12 INFO  Ej5:13 - Moviendo el archivo /tmp/d1/f11.txt a /tmp/d1/f12.txt
+2021-09-16 12:35:12 INFO  Ej5:13 - Moviendo el archivo /tmp/d2/f21.txt a /tmp/d1/f21.txt
+2021-09-16 12:35:12 INFO  Ej5:19 - Eliminando directorio /tmp/d2
+2021-09-16 12:35:30 INFO  Ejercicio4:25 - Creando directorio d1...
+2021-09-16 12:35:30 INFO  Ejercicio4:27 - Creando fichero f11.txt
+2021-09-16 12:35:30 INFO  Ejercicio4:29 - Creando directorio d2...
+2021-09-16 12:35:30 INFO  Ejercicio4:31 - Creando fichero f21.txt
+2021-09-16 12:35:38 INFO  Ej5:13 - Moviendo el archivo /tmp/d1/f11.txt a /tmp/d1/f12.txt
+2021-09-16 12:35:38 INFO  Ej5:13 - Moviendo el archivo /tmp/d2/f21.txt a /tmp/d1/f21.txt
+2021-09-16 12:35:38 INFO  Ej5:19 - Eliminando directorio /tmp/d2
+2021-09-16 12:40:47 INFO  Ejercicio5:14 - Renaming/moving /tmp/d1/f11.txt to new path: /tmp/d1/f12.txt
+2021-09-16 12:40:47 ERROR Ejercicio5:18 - Couldn't mover or rename /tmp/d1/f11.txt
+2021-09-16 12:40:47 INFO  Ejercicio5:14 - Renaming/moving /tmp/d2/f21.txt to new path: tmp/d1/f21.txt
+2021-09-16 12:40:47 ERROR Ejercicio5:18 - Couldn't mover or rename /tmp/d2/f21.txt
+2021-09-16 12:40:47 INFO  Ejercicio5:24 - Deleting /tmp/d2/
+2021-09-16 12:40:47 ERROR Ejercicio5:28 - Folder doesn't exists
+2021-09-20 12:40:19 INFO  Ejercicio4:25 - Creando directorio d1...
+2021-09-20 12:40:19 INFO  Ejercicio4:27 - Creando fichero f11.txt
+2021-09-20 12:40:19 INFO  Ejercicio4:29 - Creando directorio d2...
+2021-09-20 12:40:19 INFO  Ejercicio4:31 - Creando fichero f21.txt
+2021-09-20 13:14:31 INFO  Ejercicio6:21 - Nombre del archivo: f11.txt
+2021-09-20 13:14:31 INFO  Ejercicio6:23 - Camino absoluto: /tmp/d1/f11.txt
+2021-09-20 13:14:31 INFO  Ejercicio6:25 - Tamaño: 0
+2021-09-20 13:14:31 INFO  Ejercicio6:28 - Es un fichero
+2021-09-20 13:14:31 INFO  Ejercicio6:33 - Última modificación: 1632134419187
+2021-09-20 13:14:31 INFO  Ejercicio6:36 - Tiene permisos de escritura
+2021-09-20 13:14:31 INFO  Ejercicio6:42 - Tiene permisos de lectura
+2021-09-20 13:14:31 INFO  Ejercicio6:50 - No tiene permisos de ejecución
+2021-09-20 13:16:53 INFO  Ejercicio6:21 - Nombre del archivo: f11.txt
+2021-09-20 13:16:53 INFO  Ejercicio6:23 - Camino absoluto: /tmp/d1/f11.txt
+2021-09-20 13:16:53 INFO  Ejercicio6:25 - Tamaño: 12
+2021-09-20 13:16:53 INFO  Ejercicio6:28 - Es un fichero
+2021-09-20 13:16:53 INFO  Ejercicio6:33 - Última modificación: 1632136605271
+2021-09-20 13:16:53 INFO  Ejercicio6:36 - Tiene permisos de escritura
+2021-09-20 13:16:53 INFO  Ejercicio6:42 - Tiene permisos de lectura
+2021-09-20 13:16:53 INFO  Ejercicio6:50 - No tiene permisos de ejecución
+
