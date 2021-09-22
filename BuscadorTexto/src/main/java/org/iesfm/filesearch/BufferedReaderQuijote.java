@@ -4,11 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.util.Scanner;
 
-public class BufferedReaderExample {
+public class BufferedReaderQuijote {
 
-    public static Logger log = LoggerFactory.getLogger(BufferedReaderExample.class);
+    public static Logger log = LoggerFactory.getLogger(BufferedReaderQuijote.class);
 
     public static void main(String[] args) {
 

@@ -1282,3 +1282,5 @@
 2021-09-21 10:08:39 INFO  BufferedReaderExample:27 - y tuvo asomos de dama; del gran Quijote fue llama, y fue gloria de su aldea.
 2021-09-21 10:08:39 INFO  BufferedReaderExample:27 - Estos fueron los versos que se pudieron leer; los demás, por estar carcomida la letra, se entregaron a un académico para que por conjeturas los declarase. Tiénese noticia que lo ha hecho, a costa de muchas vigilias y mucho trabajo, y que tiene intención de sacallos a luz, con esperanza de la tercera salida de don Quijote.
 2021-09-21 10:08:39 INFO  BufferedReaderExample:27 - Forse altri canterà con miglior plettro. FINIS
+2021-09-22 11:02:40 INFO  ThreadQuijote:27 - caballero
+2021-09-22 11:07:10 INFO  ThreadQuijote:19 - en

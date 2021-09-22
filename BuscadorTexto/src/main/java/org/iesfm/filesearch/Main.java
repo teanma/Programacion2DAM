@@ -1,8 +1,5 @@
 package org.iesfm.filesearch;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.Scanner;
 
 public class Main {
@@ -19,7 +16,7 @@ public class Main {
         System.out.println("Introduce un texto");
         String text = scan.nextLine();
 
-        int number = BufferedReaderExample.searchWord(text);
+        int number = BufferedReaderQuijote.searchWord(text);
 
         System.out.println("La palabra " + text + " aparece " + number + " veces");
     }
