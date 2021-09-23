@@ -71,3 +71,12 @@
 2021-09-20 13:16:53 INFO  Ejercicio6:42 - Tiene permisos de lectura
 2021-09-20 13:16:53 INFO  Ejercicio6:50 - No tiene permisos de ejecución
 
+2021-09-23 10:57:31 INFO  ReadExample:17 - /home/teodormardale/files/4.txt
+2021-09-23 10:57:31 INFO  ReadExample:17 - /home/teodormardale/files/1.txt
+2021-09-23 10:57:31 INFO  ReadExample:17 - /home/teodormardale/files/2.txt
+2021-09-23 10:57:31 INFO  ReadExample:17 - /home/teodormardale/files/3.txt
+2021-09-23 12:18:53 INFO  FolderReader:25 - Bien bien
+Hola mundo
+Adios mundo
+Que tal
+
