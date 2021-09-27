@@ -3,32 +3,37 @@ package org.iesfm.filesearch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URISyntaxException;
 
-public class QuijoteReader {
+public class QuijoteWriter {
 
     private static Logger log = LoggerFactory.getLogger(QuijoteReader.class);
 
-    public File quijoteFile(String path) {
+    public File classpath(String path) {
         File file = null;
         try {
             file = new File(getClass().getResource(path).toURI());
         } catch (URISyntaxException e) {
-            e.printStackTrace();
+            log.error("", e);
         }
         return file;
     }
 
-    private String readElQuijote(File file) {
+    public void writeContent(String content, File destination) {
+        try(FileWriter writer = new FileWriter(destination)) {
+            writer.write(content);
+        } catch (IOException e) {
+            log.error("", e);
+        }
+    }
+
+    private String readFile(File file) {
         StringBuilder stringBuilder = new StringBuilder();
         try (BufferedReader reader =
-                new BufferedReader(
-                        new FileReader(file)
-                )
+                     new BufferedReader(
+                             new FileReader(file)
+                     )
         ) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -41,9 +46,8 @@ public class QuijoteReader {
     }
 
     public static void main(String[] args) {
-        QuijoteReader quijoteReader = new QuijoteReader();
-        File quijoteFile = quijoteReader.quijoteFile("/el_quijote.txt");
-        String quijoteStr = quijoteReader.readElQuijote(quijoteFile);
-        log.info(quijoteStr);
+        QuijoteWriter quijoteWriter = new QuijoteWriter();
+        String elQuijoteStr = quijoteWriter.readFile(quijoteWriter.classpath("/el_quijote.txt"));
+        quijoteWriter.writeContent(elQuijoteStr, new File("/tmp/el_quijote.txt"));
     }
 }
