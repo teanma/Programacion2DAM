@@ -1,4 +1,4 @@
-package org.iesfm.racecondition;
+package org.iesfm.racecondition.increment;
 
 public class Accumulator {
 
