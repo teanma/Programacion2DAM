@@ -1,0 +1,39 @@
+{
+  "name": "MiEmpresa",
+  "departments": [
+    {
+      "departmentName": "Marketing Online",
+      "employees": [
+        {
+          "nif": "34844303X",
+          "name": "Jose",
+          "surname": "Garcia",
+          "employeeJob": "Analista Web"
+        },
+        {
+          "nif": "34923433J",
+          "name": "Jimena",
+          "surname": "Olmos",
+          "employeeJob": "Disenadora"
+        }
+      ]
+    },
+    {
+      "departmentName": "Administracion",
+      "employees": [
+        {
+          "nif": "98531012Y",
+          "name": "Irene",
+          "surname": "Gallardo",
+          "employeeJob": "Auxiliar"
+        },
+        {
+          "nif": "043592394P",
+          "name": "Manuel",
+          "surname": "Serrano",
+          "employeeJob": "Atencion al cliente"
+        }
+      ]
+    }
+  ]
+}
