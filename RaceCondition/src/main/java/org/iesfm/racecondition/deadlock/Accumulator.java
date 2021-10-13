@@ -1,14 +1,14 @@
-package org.iesfm.racecondition.semaphore;
+package org.iesfm.racecondition.deadlock;
 
 public class Accumulator {
 
     private int value = 0;
 
-    public void inc() {
+    public synchronized void inc() {
         value = value + 1;
     }
 
-    public void dec() {
+    public synchronized void dec() {
         value = value - 1;
     }
 

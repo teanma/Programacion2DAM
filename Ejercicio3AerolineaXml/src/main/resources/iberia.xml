@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <flights>
+      <element>
+         <date>24/10/2021</date>
+         <destination>Londres</destination>
+         <number>23432543</number>
+         <origin>Madrid</origin>
+         <passengers>
+            <element>
+               <class>tourist</class>
+               <nif>2342343</nif>
+               <seat>34</seat>
+            </element>
+            <element>
+               <class>business</class>
+               <nif>2342343</nif>
+               <seat>10</seat>
+            </element>
+         </passengers>
+      </element>
+      <element>
+         <date>28/10/2021</date>
+         <destination>Madrid</destination>
+         <number>23432555</number>
+         <origin>Londres</origin>
+         <passengers>
+            <element>
+               <class>tourist</class>
+               <nif>2342343</nif>
+               <seat>34</seat>
+            </element>
+            <element>
+               <class>business</class>
+               <nif>2342343</nif>
+               <seat>10</seat>
+            </element>
+         </passengers>
+      </element>
+   </flights>
+   <name>Iberia</name>
+</root>
+

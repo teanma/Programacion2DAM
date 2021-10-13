@@ -1,7 +1,8 @@
-package org.iesfm.racecondition.synchronize;
-
+package org.iesfm.racecondition.semaphore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.concurrent.Semaphore;
 
 public class Main {
 
@@ -9,11 +10,13 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Semaphore semaphore = new Semaphore(1);
+
         Accumulator accumulator = new Accumulator();
 
-        Thread t1 = new Thread(new IncTask(accumulator, 10000));
+        Thread t1 = new Thread(new IncTask(accumulator, 1000, semaphore));
 
-        Thread t2 = new Thread(new DecTask(accumulator, 10000));
+        Thread t2 = new Thread(new DecTask(accumulator, 1000, semaphore));
 
         t1.start();
         t2.start();

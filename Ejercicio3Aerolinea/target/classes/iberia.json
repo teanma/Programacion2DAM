@@ -1,0 +1,41 @@
+{
+  "name": "Iberia",
+  "flights": [
+    {
+      "number": 23432543,
+      "origin": "Madrid",
+      "destination": "Londres",
+      "date": "24/10/2021",
+      "passengers": [
+        {
+          "nif": "2342343",
+          "class": "tourist",
+          "seat": 34
+        },
+        {
+          "nif": "2342343",
+          "class": "business",
+          "seat": 10
+        }
+      ]
+    },
+    {
+      "number": 23432555,
+      "origin": "Londres",
+      "destination": "Madrid",
+      "date": "28/10/2021",
+      "passengers": [
+        {
+          "nif": "2342343",
+          "class": "tourist",
+          "seat": 34
+        },
+        {
+          "nif": "2342343",
+          "class": "business",
+          "seat": 10
+        }
+      ]
+    }
+  ]
+}
