@@ -1,25 +1,18 @@
 package org.iesfm.aerolineaxml;
 
-import java.util.Date;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 import java.util.List;
 import java.util.Objects;
 
+@XStreamAlias("flight")
 public class Flight {
 
     private int number;
     private String origin;
     private String destination;
-    private Date date;
+    private String date;
     private List<Passenger> passengers;
-
-
-    public Flight(int number, String origin, String destination, Date date, List<Passenger> passengers) {
-        this.number = number;
-        this.origin = origin;
-        this.destination = destination;
-        this.date = date;
-        this.passengers = passengers;
-    }
 
     public int getNumber() {
         return number;
@@ -45,11 +38,11 @@ public class Flight {
         this.destination = destination;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -80,7 +73,7 @@ public class Flight {
                 "number=" + number +
                 ", origin='" + origin + '\'' +
                 ", destination='" + destination + '\'' +
-                ", date=" + date +
+                ", date='" + date + '\'' +
                 ", passengers=" + passengers +
                 '}';
     }

@@ -1,18 +1,17 @@
 package org.iesfm.aerolineaxml;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 import java.util.Objects;
 
+@XStreamAlias("passenger")
 public class Passenger {
 
     private String nif;
+    @XStreamAlias("class")
     private String ticketClass;
     private int seat;
 
-    public Passenger(String nif, String ticketClass, int seat) {
-        this.nif = nif;
-        this.ticketClass = ticketClass;
-        this.seat = seat;
-    }
 
     public String getNif() {
         return nif;

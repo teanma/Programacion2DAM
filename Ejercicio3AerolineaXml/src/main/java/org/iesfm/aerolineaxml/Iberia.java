@@ -1,21 +1,15 @@
 package org.iesfm.aerolineaxml;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import java.util.List;
 import java.util.Objects;
 
+@XStreamAlias("iberia")
 public class Iberia {
 
     private String name;
     private List<Flight> flights;
-
-
-    public Iberia(String name, List<Flight> flights) {
-        this.name = name;
-        this.flights = flights;
-    }
 
     public String getName() {
         return name;
