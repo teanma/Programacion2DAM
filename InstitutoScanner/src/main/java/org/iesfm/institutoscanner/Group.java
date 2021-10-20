@@ -6,10 +6,10 @@ import java.util.Objects;
 public class Group {
 
     private String letter;
-    private String grade;
+    private int grade;
     private List<Student> students;
 
-    public Group(String letter, String grade, List<Student> students) {
+    public Group(String letter, int grade, List<Student> students) {
         this.letter = letter;
         this.grade = grade;
         this.students = students;
@@ -23,11 +23,11 @@ public class Group {
         this.letter = letter;
     }
 
-    public String getGrade() {
+    public int getGrade() {
         return grade;
     }
 
-    public void setGrade(String grade) {
+    public void setGrade(int grade) {
         this.grade = grade;
     }
 
@@ -44,7 +44,7 @@ public class Group {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Group group = (Group) o;
-        return Objects.equals(letter, group.letter) && Objects.equals(grade, group.grade) && Objects.equals(students, group.students);
+        return grade == group.grade && Objects.equals(letter, group.letter) && Objects.equals(students, group.students);
     }
 
     @Override
@@ -56,7 +56,7 @@ public class Group {
     public String toString() {
         return "Group{" +
                 "letter='" + letter + '\'' +
-                ", grade='" + grade + '\'' +
+                ", grade=" + grade +
                 ", students=" + students +
                 '}';
     }

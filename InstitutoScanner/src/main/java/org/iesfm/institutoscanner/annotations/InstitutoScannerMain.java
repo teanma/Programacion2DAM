@@ -1,9 +1,6 @@
 package org.iesfm.institutoscanner.annotations;
 
-import org.iesfm.institutoscanner.Group;
-import org.iesfm.institutoscanner.GroupReader;
-import org.iesfm.institutoscanner.Student;
-import org.iesfm.institutoscanner.StudentReader;
+import org.iesfm.institutoscanner.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -16,12 +13,8 @@ public class InstitutoScannerMain {
         // Se crean los beans y se inyectan las dependencias
         ApplicationContext context =
                 new AnnotationConfigApplicationContext(InstitutoScannerConfiguration.class);
-
-        //StudentReader programa = context.getBean(StudentReader.class);
-        //Student student = programa.readStudent();
-        //log.info(student.toString());
-        GroupReader programa = context.getBean(GroupReader.class);
-        Group group = programa.readGroup();
-        log.info(group.toString());
+        HighSchoolReader program = context.getBean(HighSchoolReader.class);
+        HighSchool highSchool = program.readHighSchool();
+        log.info(highSchool.toString());
     }
 }

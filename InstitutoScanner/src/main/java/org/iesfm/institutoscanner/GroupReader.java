@@ -9,23 +9,27 @@ import java.util.Scanner;
 
 public class GroupReader {
 
-    private final Logger log = LoggerFactory.getLogger(GroupReader.class);
+    private static Logger log = LoggerFactory.getLogger(GroupReader.class);
 
     public Scanner scanner;
     public StudentReader studentReader;
+    public ScannerUtils scannerUtils;
 
-    public GroupReader(Scanner scanner, StudentReader studentReader) {
+    public GroupReader(Scanner scanner, StudentReader studentReader, ScannerUtils scannerUtils) {
         this.scanner = scanner;
         this.studentReader = studentReader;
+        this.scannerUtils = scannerUtils;
     }
 
     public Group readGroup() {
         log.info("Introduce la letra");
         String letter = scanner.nextLine();
         log.info("Introduce el curso");
-        String grade = scanner.nextLine();
+        int grade = scannerUtils.readPositiveNumber();
+        scanner.nextLine();
         log.info("Introduce la lista de estudiantes");
-        int showStudents = scanner.nextInt();
+        int showStudents = scannerUtils.readPositiveNumber();
+        scanner.nextLine();
         List<Student> students = new LinkedList<>();
         for (int i = 0; i < showStudents; i++) {
             students.add(studentReader.readStudent());

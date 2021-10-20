@@ -2,3 +2,70 @@
 2021-10-19 09:53:36 INFO  InstitutoScannerMain:20 - Student{nif='v1v435p4ñ4', name='Antonio', surname='Recio'}
 2021-10-19 09:53:39 INFO  InstitutoScannerMain:20 - Student{nif='v1v435p4ñ4', name='Antonio', surname='Recio'}
 2021-10-19 09:54:00 INFO  InstitutoScannerMain:20 - Student{nif='v1v435p4ñ4', name='Antonio', surname='Recio'}
+2021-10-20 11:40:22 INFO  GroupReader:23 - Introduce el nombre del instituto
+2021-10-20 11:40:29 INFO  GroupReader:25 - Introduce la lista de grupos
+2021-10-20 11:40:32 INFO  GroupReader:23 - Introduce la letra
+2021-10-20 11:40:32 INFO  GroupReader:25 - Introduce el curso
+2021-10-20 11:41:12 INFO  GroupReader:23 - Introduce el nombre del instituto
+2021-10-20 11:41:31 INFO  GroupReader:25 - Introduce la lista de grupos
+2021-10-20 11:41:36 INFO  GroupReader:23 - Introduce la letra
+2021-10-20 11:41:36 INFO  GroupReader:25 - Introduce el curso
+2021-10-20 11:41:44 INFO  GroupReader:27 - Introduce la lista de estudiantes
+2021-10-20 11:41:51 INFO  StudentReader:21 - Introduce el nif
+2021-10-20 11:41:51 INFO  StudentReader:23 - Introduce el nombre
+2021-10-20 11:42:37 INFO  StudentReader:25 - Introduce el apellido
+2021-10-20 11:42:41 INFO  StudentReader:21 - Introduce el nif
+2021-10-20 11:42:47 INFO  StudentReader:23 - Introduce el nombre
+2021-10-20 11:42:50 INFO  StudentReader:25 - Introduce el apellido
+2021-10-20 11:42:52 INFO  GroupReader:23 - Introduce la letra
+2021-10-20 11:42:56 INFO  GroupReader:25 - Introduce el curso
+2021-10-20 11:42:58 INFO  GroupReader:27 - Introduce la lista de estudiantes
+2021-10-20 11:44:20 INFO  GroupReader:23 - Introduce el nombre del instituto
+2021-10-20 11:44:28 INFO  GroupReader:25 - Introduce la lista de grupos
+2021-10-20 11:44:30 INFO  GroupReader:23 - Introduce la letra
+2021-10-20 11:44:41 INFO  GroupReader:25 - Introduce el curso
+2021-10-20 11:44:45 INFO  GroupReader:27 - Introduce la lista de estudiantes
+2021-10-20 11:44:52 INFO  StudentReader:21 - Introduce el nif
+2021-10-20 11:44:59 INFO  StudentReader:23 - Introduce el nombre
+2021-10-20 11:45:02 INFO  StudentReader:25 - Introduce el apellido
+2021-10-20 11:45:04 INFO  StudentReader:21 - Introduce el nif
+2021-10-20 11:45:08 INFO  StudentReader:23 - Introduce el nombre
+2021-10-20 11:45:10 INFO  StudentReader:25 - Introduce el apellido
+2021-10-20 11:45:14 INFO  GroupReader:23 - Introduce la letra
+2021-10-20 11:45:17 INFO  GroupReader:25 - Introduce el curso
+2021-10-20 11:45:22 INFO  GroupReader:27 - Introduce la lista de estudiantes
+2021-10-20 11:46:34 INFO  GroupReader:23 - Introduce el nombre del instituto
+2021-10-20 11:46:38 INFO  GroupReader:25 - Introduce la lista de grupos
+2021-10-20 11:46:41 INFO  GroupReader:23 - Introduce la letra
+2021-10-20 11:46:48 INFO  GroupReader:25 - Introduce el curso
+2021-10-20 11:46:50 INFO  GroupReader:27 - Introduce la lista de estudiantes
+2021-10-20 11:46:54 INFO  StudentReader:21 - Introduce el nif
+2021-10-20 11:46:58 INFO  StudentReader:23 - Introduce el nombre
+2021-10-20 11:47:04 INFO  StudentReader:25 - Introduce el apellido
+2021-10-20 11:47:07 INFO  InstitutoScannerMain:18 - HighSchool{highSchoolName='Federica', groups=[Group{letter='fg35', grade='gr345', students=[Student{nif='gt345', name='geg345', surname='hthdh34'}]}]}
+2021-10-20 11:56:08 INFO  GroupReader:24 - Introduce el nombre del instituto
+2021-10-20 11:56:14 INFO  GroupReader:26 - Introduce la lista de grupos
+2021-10-20 11:57:25 INFO  GroupReader:24 - Introduce el nombre del instituto
+2021-10-20 11:57:30 INFO  GroupReader:26 - Introduce la lista de grupos
+2021-10-20 11:59:06 INFO  GroupReader:24 - Introduce el nombre del instituto
+2021-10-20 11:59:11 INFO  GroupReader:26 - Introduce la lista de grupos
+2021-10-20 12:01:43 WARN  AnnotationConfigApplicationContext:591 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'groupReader' defined in org.iesfm.institutoscanner.annotations.InstitutoScannerConfiguration: Unsatisfied dependency expressed through method 'groupReader' parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.iesfm.institutoscanner.ScannerUtils' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-10-20 12:02:45 WARN  AnnotationConfigApplicationContext:591 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'groupReader' defined in org.iesfm.institutoscanner.annotations.InstitutoScannerConfiguration: Unsatisfied dependency expressed through method 'groupReader' parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.iesfm.institutoscanner.ScannerUtils' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-10-20 12:04:09 INFO  GroupReader:25 - Introduce el nombre del instituto
+2021-10-20 12:04:16 INFO  GroupReader:27 - Introduce la lista de grupos
+2021-10-20 12:04:16 INFO  ScannerUtils:19 - Introduce un número positivo
+2021-10-20 12:04:56 INFO  GroupReader:25 - Introduce el nombre del instituto
+2021-10-20 12:05:00 INFO  GroupReader:27 - Introduce la lista de grupos
+2021-10-20 12:05:00 INFO  ScannerUtils:19 - Introduce un número positivo
+2021-10-20 12:05:13 INFO  GroupReader:25 - Introduce la letra
+2021-10-20 12:05:20 INFO  GroupReader:27 - Introduce el curso
+2021-10-20 12:05:26 INFO  GroupReader:29 - Introduce la lista de estudiantes
+2021-10-20 12:05:26 INFO  ScannerUtils:19 - Introduce un número positivo
+2021-10-20 12:05:31 INFO  StudentReader:21 - Introduce el nif
+2021-10-20 12:05:34 INFO  StudentReader:23 - Introduce el nombre
+2021-10-20 12:05:36 INFO  StudentReader:25 - Introduce el apellido
+2021-10-20 12:05:39 INFO  InstitutoScannerMain:18 - HighSchool{highSchoolName='Federica', groups=[Group{letter='rg34', grade='fhgr3325', students=[Student{nif='fdg345', name='gdfgw34', surname='gwggrer34'}]}]}
+2021-10-20 12:59:42 INFO  GroupReader:25 - Introduce el nombre del instituto
+2021-10-20 12:59:48 INFO  GroupReader:27 - Introduce la lista de grupos
+2021-10-20 12:59:48 INFO  ScannerUtils:23 - Introduce un número
+2021-10-20 13:00:57 INFO  GroupReader:25 - Introduce la letra

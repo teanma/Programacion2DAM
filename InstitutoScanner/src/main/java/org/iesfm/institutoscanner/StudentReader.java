@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class StudentReader {
 
-    private final static Logger log = LoggerFactory.getLogger(StudentReader.class);
+    private static Logger log = LoggerFactory.getLogger(StudentReader.class);
 
     private Scanner scanner;
 
