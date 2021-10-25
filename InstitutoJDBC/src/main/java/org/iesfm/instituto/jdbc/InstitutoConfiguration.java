@@ -6,9 +6,35 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
+import java.util.Scanner;
 
 @Configuration
 public class InstitutoConfiguration {
+
+    @Bean
+    public TitleDAO titleDAO(NamedParameterJdbcTemplate jdbc) {
+        return new TitleDAO(jdbc);
+    }
+
+    @Bean
+    public EnrollmentReader enrollmentReader(Scanner scanner) {
+        return new EnrollmentReader(scanner);
+    }
+
+    @Bean
+    public StudentReader studentReader(Scanner scanner) {
+        return new StudentReader(scanner);
+    }
+
+    @Bean
+    public TitleReader titleReader(Scanner scanner) {
+        return new TitleReader(scanner);
+    }
+
+    @Bean
+    public TitleGroupReader titleGroupReader(Scanner scanner) {
+        return new TitleGroupReader(scanner);
+    }
 
     @Bean
     public InsertTitleProgram insertTitleProgram(NamedParameterJdbcTemplate jdbc) {

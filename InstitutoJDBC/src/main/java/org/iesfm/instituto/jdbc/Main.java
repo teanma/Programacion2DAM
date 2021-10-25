@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.List;
+
 public class Main {
 
     private static Logger log = LoggerFactory.getLogger(Main.class);
@@ -15,7 +17,10 @@ public class Main {
                         InstitutoConfiguration.class
                 );
 
-        InsertTitleProgram program = context.getBean(InsertTitleProgram.class);
-        program.insertar();
+        TitleDAO program = context.getBean(TitleDAO.class);
+        List<Title> titles = program.list();
+        for (Title title : titles) {
+            System.out.println(title.toString());
+        }
     }
 }
