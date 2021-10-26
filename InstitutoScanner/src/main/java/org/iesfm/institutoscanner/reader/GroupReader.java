@@ -1,5 +1,7 @@
-package org.iesfm.institutoscanner;
+package org.iesfm.institutoscanner.reader;
 
+import org.iesfm.institutoscanner.Group;
+import org.iesfm.institutoscanner.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,10 +28,8 @@ public class GroupReader {
         String letter = scanner.nextLine();
         log.info("Introduce el curso");
         int grade = scannerUtils.readPositiveNumber();
-        scanner.nextLine();
         log.info("Introduce la lista de estudiantes");
         int showStudents = scannerUtils.readPositiveNumber();
-        scanner.nextLine();
         List<Student> students = new LinkedList<>();
         for (int i = 0; i < showStudents; i++) {
             students.add(studentReader.readStudent());

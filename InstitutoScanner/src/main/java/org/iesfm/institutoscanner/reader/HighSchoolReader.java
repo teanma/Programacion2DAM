@@ -1,5 +1,7 @@
-package org.iesfm.institutoscanner;
+package org.iesfm.institutoscanner.reader;
 
+import org.iesfm.institutoscanner.Group;
+import org.iesfm.institutoscanner.HighSchool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,7 +28,6 @@ public class HighSchoolReader {
         String highSchoolName = scanner.nextLine();
         log.info("Introduce la lista de grupos");
         int showGroups = scannerUtils.readPositiveNumber();
-        scanner.nextLine();
         List<Group> groups = new LinkedList<>();
         for (int i = 0; i < showGroups; i++) {
             groups.add(groupReader.readGroup());

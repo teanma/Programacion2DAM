@@ -1,10 +1,9 @@
-package org.iesfm.institutoscanner;
+package org.iesfm.institutoscanner.reader;
 
+import org.iesfm.institutoscanner.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class StudentReader {
