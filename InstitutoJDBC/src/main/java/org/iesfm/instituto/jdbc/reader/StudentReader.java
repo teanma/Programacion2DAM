@@ -1,5 +1,6 @@
-package org.iesfm.instituto.jdbc;
+package org.iesfm.instituto.jdbc.reader;
 
+import org.iesfm.instituto.jdbc.classes.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,6 +25,7 @@ public class StudentReader {
         String student_surname = scanner.nextLine();
         log.info("Introduce el zipcode");
         int zipcode = scanner.nextInt();
+        scanner.nextLine();
         log.info("Introduce la dirección");
         String address = scanner.nextLine();
         log.info("Introduce el correo");

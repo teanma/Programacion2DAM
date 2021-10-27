@@ -1,4 +1,4 @@
-package org.iesfm.instituto.jdbc;
+package org.iesfm.instituto.jdbc.classes;
 
 import java.util.Objects;
 

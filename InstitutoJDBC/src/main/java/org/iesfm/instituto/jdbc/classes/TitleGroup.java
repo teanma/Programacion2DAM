@@ -1,29 +1,29 @@
-package org.iesfm.instituto.jdbc;
+package org.iesfm.instituto.jdbc.classes;
 
 import java.util.Objects;
 
 public class TitleGroup {
 
-    private Integer group_id;
+    private Integer id;
     private String course;
     private String letter;
     private String title;
-    private String group_year;
+    private int year;
 
-    public TitleGroup(Integer group_id, String course, String letter, String title, String group_year) {
-        this.group_id = group_id;
+    public TitleGroup(Integer id, String course, String letter, String title, int year) {
+        this.id = id;
         this.course = course;
         this.letter = letter;
         this.title = title;
-        this.group_year = group_year;
+        this.year = year;
     }
 
-    public Integer getGroup_id() {
-        return group_id;
+    public Integer getId() {
+        return id;
     }
 
-    public void setGroup_id(Integer group_id) {
-        this.group_id = group_id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getCourse() {
@@ -50,12 +50,12 @@ public class TitleGroup {
         this.title = title;
     }
 
-    public String getGroup_year() {
-        return group_year;
+    public int getYear() {
+        return year;
     }
 
-    public void setGroup_year(String group_year) {
-        this.group_year = group_year;
+    public void setYear(int year) {
+        this.year = year;
     }
 
     @Override
@@ -63,22 +63,22 @@ public class TitleGroup {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TitleGroup that = (TitleGroup) o;
-        return Objects.equals(group_id, that.group_id) && Objects.equals(course, that.course) && Objects.equals(letter, that.letter) && Objects.equals(title, that.title) && Objects.equals(group_year, that.group_year);
+        return year == that.year && Objects.equals(id, that.id) && Objects.equals(course, that.course) && Objects.equals(letter, that.letter) && Objects.equals(title, that.title);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(group_id, course, letter, title, group_year);
+        return Objects.hash(id, course, letter, title, year);
     }
 
     @Override
     public String toString() {
         return "TitleGroup{" +
-                "group_id=" + group_id +
+                "id=" + id +
                 ", course='" + course + '\'' +
                 ", letter='" + letter + '\'' +
                 ", title='" + title + '\'' +
-                ", group_year='" + group_year + '\'' +
+                ", year=" + year +
                 '}';
     }
 }

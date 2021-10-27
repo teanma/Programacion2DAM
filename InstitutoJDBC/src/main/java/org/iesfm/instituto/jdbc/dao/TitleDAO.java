@@ -1,5 +1,6 @@
-package org.iesfm.instituto.jdbc;
+package org.iesfm.instituto.jdbc.dao;
 
+import org.iesfm.instituto.jdbc.classes.Title;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import java.util.HashMap;
@@ -30,19 +31,23 @@ public class TitleDAO {
     }
 
     public void insert(Title title) {
-        String query = "INSERT INTO title(" +
-                "   title_name," +
-                "   title_level," +
-                "   family," +
-                "   title_description" +
-                ") " +
-                "VALUES(" +
-                title.getName() + "," +
-                title.getLevel() + "," +
-                title.getFamily() + "," +
-                title.getDescription() + "" +
-                ")";
+        //String query = "INSERT INTO title(" +
+          //      "   title_name," +
+            //    "   title_level," +
+              //  "   family," +
+                //"   title_description" +
+                //") " +
+                //"VALUES(" +
+                //title.getName() + "," +
+                //title.getLevel() + "," +
+                //title.getFamily() + "," +
+                //title.getDescription() + "" +
+                //")";
         Map<String, Object> params = new HashMap<>();
+        params.put("name", title.getName());
+        params.put("level", title.getLevel());
+        params.put("family", title.getFamily());
+        params.put("description", title.getDescription());
         jdbc.update(INSERT_TITLE, params);
     }
 
@@ -55,9 +60,9 @@ public class TitleDAO {
                             new Title(
                                     rs.getInt("title_id"),
                                     rs.getString("title_name"),
-                                    rs.getString("title_name"),
-                                    rs.getString("title_name"),
-                                    rs.getString("title_name")
+                                    rs.getString("title_level"),
+                                    rs.getString("family"),
+                                    rs.getString("title_description")
                             )
         );
     }

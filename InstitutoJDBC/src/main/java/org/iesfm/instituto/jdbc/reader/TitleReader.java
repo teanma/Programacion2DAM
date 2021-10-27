@@ -1,5 +1,6 @@
-package org.iesfm.instituto.jdbc;
+package org.iesfm.instituto.jdbc.reader;
 
+import org.iesfm.instituto.jdbc.classes.Title;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

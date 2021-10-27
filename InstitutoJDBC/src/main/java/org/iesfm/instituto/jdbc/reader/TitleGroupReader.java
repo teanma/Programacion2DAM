@@ -1,5 +1,6 @@
-package org.iesfm.instituto.jdbc;
+package org.iesfm.instituto.jdbc.reader;
 
+import org.iesfm.instituto.jdbc.classes.TitleGroup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +26,8 @@ public class TitleGroupReader {
         log.info("Introduce el título");
         String title = scanner.nextLine();
         log.info("Introduce el año del grupo");
-        String group_year = scanner.nextLine();
+        int group_year = scanner.nextInt();
+        scanner.nextLine();
         return new TitleGroup(group_id, course, letter, title, group_year);
     }
 }
