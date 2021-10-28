@@ -35,3 +35,7 @@
 2021-10-27 14:08:18 INFO  TitleGroupReader:24 - Introduce la letra
 2021-10-27 14:08:20 INFO  TitleGroupReader:26 - Introduce el título
 2021-10-27 14:08:36 INFO  TitleGroupReader:28 - Introduce el año del grupo
+2021-10-28 10:50:44 INFO  StudentReader:21 - Introduce el nif
+2021-10-28 10:50:54 INFO  StudentReader:23 - Introduce el nombre del estudiante
+2021-10-28 10:51:38 INFO  StudentReader:20 - Introduce el nif
+2021-10-28 10:51:38 INFO  StudentReader:22 - Introduce el nombre del estudiante

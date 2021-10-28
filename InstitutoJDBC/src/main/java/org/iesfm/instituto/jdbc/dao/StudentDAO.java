@@ -10,9 +10,9 @@ import java.util.Map;
 
 public class StudentDAO {
 
-    private final static String SELECT_TITLES = "SELECT * FROM student";
+    private final static String SELECT_STUDENTS = "SELECT * FROM student";
 
-    private final static String INSERT_TITLE = "INSERT INTO student(" +
+    private final static String INSERT_STUDENT = "INSERT INTO student(" +
             "   nif," +
             "   student_name," +
             "   student_surname" +
@@ -43,13 +43,13 @@ public class StudentDAO {
         params.put("zipcode", student.getZipcode());
         params.put("address", student.getAddress());
         params.put("email", student.getEmail());
-        jdbc.update(INSERT_TITLE, params);
+        jdbc.update(INSERT_STUDENT, params);
     }
 
     public List<Student> list() {
         Map<String, Object> params = new HashMap<>();
         return jdbc.query(
-                SELECT_TITLES,
+                SELECT_STUDENTS,
                 params,
                 (rs, rownum) ->
                         new Student(

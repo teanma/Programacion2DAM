@@ -10,17 +10,15 @@ import java.util.Map;
 
 public class TitleGroupDAO {
 
-    private final static String SELECT_TITLES = "SELECT * FROM titleGroup";
+    private final static String SELECT_GROUPS = "SELECT * FROM titleGroup";
 
-    private final static String INSERT_TITLE = "INSERT INTO titleGroup(" +
-            "   group_id," +
+    private final static String INSERT_GROUP = "INSERT INTO titleGroup(" +
             "   course," +
             "   letter," +
             "   title" +
             "   group_year" +
             ") " +
             "VALUES(" +
-            "   :id," +
             "   :course," +
             "   :letter," +
             "   :title," +
@@ -35,18 +33,17 @@ public class TitleGroupDAO {
 
     public void insert(TitleGroup titleGroup) {
         Map<String, Object> params = new HashMap<>();
-        params.put("id", titleGroup.getId());
         params.put("course", titleGroup.getCourse());
         params.put("letter", titleGroup.getLetter());
         params.put("title", titleGroup.getTitle());
         params.put("year", titleGroup.getYear());
-        jdbc.update(INSERT_TITLE, params);
+        jdbc.update(INSERT_GROUP, params);
     }
 
     public List<TitleGroup> list() {
         Map<String, Object> params = new HashMap<>();
         return jdbc.query(
-                SELECT_TITLES,
+                SELECT_GROUPS,
                 params,
                 (rs, rownum) ->
                         new TitleGroup(

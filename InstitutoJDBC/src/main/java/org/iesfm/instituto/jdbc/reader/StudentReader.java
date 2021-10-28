@@ -17,6 +17,7 @@ public class StudentReader {
     }
 
     public Student readStudent() {
+        scanner.nextLine();
         log.info("Introduce el nif");
         String nif = scanner.nextLine();
         log.info("Introduce el nombre del estudiante");

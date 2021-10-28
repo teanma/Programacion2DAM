@@ -72,16 +72,16 @@ public class Main {
                     System.out.println("-----------------");
                     break;
                 case 5:
-                    StudentDAO program3 = context.getBean(StudentDAO.class);
-                    List<Student> students = program3.list();
+                    StudentDAO program2 = context.getBean(StudentDAO.class);
+                    List<Student> students = program2.list();
                     for (Student student : students) {
                         System.out.println(student.toString());
                     }
                     System.out.println("-----------------");
                     break;
                 case 6:
-                    TitleGroupDAO program2 = context.getBean(TitleGroupDAO.class);
-                    List<TitleGroup> titleGroups = program2.list();
+                    TitleGroupDAO program3 = context.getBean(TitleGroupDAO.class);
+                    List<TitleGroup> titleGroups = program3.list();
                     for (TitleGroup titleGroup : titleGroups) {
                     System.out.println(titleGroup.toString());
                     }
