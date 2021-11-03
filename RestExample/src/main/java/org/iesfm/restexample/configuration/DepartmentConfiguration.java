@@ -18,13 +18,8 @@ import javax.sql.DataSource;
 public class DepartmentConfiguration {
 
     @Bean
-    public DepartmentController departmentController(DepartmentDAO departmentDAO) {
-        return new DepartmentController(departmentDAO);
-    }
-
-    @Bean
-    public InMemoryDepartmentDAO inMemoryDepartmentDAO() {
-        return new InMemoryDepartmentDAO();
+    public DepartmentDAO departmentDAO(NamedParameterJdbcTemplate jdbc) {
+        return new JDBCDepartmentDAO(jdbc);
     }
 
     @Bean
