@@ -4,7 +4,6 @@ import org.iesfm.restexample.Department;
 import org.iesfm.restexample.dao.DepartmentDAO;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
-import java.security.spec.NamedParameterSpec;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -49,7 +48,7 @@ public class JDBCDepartmentDAO implements DepartmentDAO {
     @Override
     public Department get(String departmentName) {
         Map<String, Object> params = new HashMap<>();
-        params.put("departmentName", departmentName);
+        params.put("name", departmentName);
         return jdbc.queryForObject(
                 GET_DEPARTMENT,
                 params,
@@ -72,7 +71,7 @@ public class JDBCDepartmentDAO implements DepartmentDAO {
     @Override
     public void delete(String departmentName) {
         Map<String, Object> params = new HashMap<>();
-        params.remove("name", departmentName);
+        params.put("name", departmentName);
         jdbc.update(DELETE_DEPARTMENT, params);
     }
 }
