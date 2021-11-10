@@ -18,6 +18,10 @@ public class Employee {
         this.department_name = department_name;
     }
 
+    public Employee() {
+
+    }
+
     public String getNif() {
         return nif;
     }

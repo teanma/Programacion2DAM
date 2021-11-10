@@ -1,6 +1,5 @@
 package org.iesfm.restexample.dao.inmemory;
 
-import org.iesfm.restexample.Department;
 import org.iesfm.restexample.Employee;
 import org.iesfm.restexample.dao.EmployeeDAO;
 
@@ -24,12 +23,32 @@ public class InMemoryEmployeeDAO implements EmployeeDAO {
     }
 
     @Override
-    public void insert(Employee employee) {
-        employees.put(employee.getNif(), employee);
+    public boolean insert(Employee employee) {
+        if (!employees.containsKey(employee.getNif())) {
+            employees.put(employee.getNif(), employee);
+        } else {
+            System.out.println("El usuario ya existe");
+        }
+        return false;
     }
 
     @Override
     public void delete(String nif) {
-        employees.remove(nif);
+        if (employees.containsKey(nif)) {
+            employees.remove(nif);
+        } else {
+            System.out.println("El usuario no existe");
+        }
+    }
+
+    @Override
+    public List<Employee> list(String departmentName) {
+        List<Employee> employees = new LinkedList<>();
+        for (Employee employee : list()) {
+            if (employee.getDepartment_name().contains(departmentName)) {
+                employees.add(employee);
+            }
+        }
+        return employees;
     }
 }

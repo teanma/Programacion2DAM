@@ -22,12 +22,12 @@ public class DepartmentController {
         return departmentDAO.list();
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/department")
+    @RequestMapping(method = RequestMethod.POST, path = "/departments")
     public void createDepartment(@RequestBody Department department) {
         departmentDAO.insert(department);
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/department/{departmentName}")
+    @RequestMapping(method = RequestMethod.GET, path = "/departments/{departmentName}")
     public Department getDepartment(@PathVariable ("departmentName") String departmentName) {
          Department department = departmentDAO.get(departmentName);
          if (department == null) {
@@ -39,7 +39,7 @@ public class DepartmentController {
          }
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, path = "/department/{departmentName}")
+    @RequestMapping(method = RequestMethod.DELETE, path = "/departments/{departmentName}")
     public void deleteDepartment(@PathVariable ("departmentName") String departmentName) {
         Department department = departmentDAO.get(departmentName);
         if (department == null) {
