@@ -47,13 +47,11 @@ public class EmployeeController {
 
     @RequestMapping(method = RequestMethod.DELETE, path = "/employees/{employeeNif}")
     public void deleteEmployee(@PathVariable ("employeeNif") String employeeNif) {
-        Employee employee = employeeDAO.delete(employeeNif);
-        if (employee == null) {
+        boolean inserted = employeeDAO.delete(employeeNif);
+        if (!inserted) {
             throw new ResponseStatusException(
                     HttpStatus.NOT_FOUND, "employee not found"
             );
-        } else {
-            return employee;
         }
     }
 

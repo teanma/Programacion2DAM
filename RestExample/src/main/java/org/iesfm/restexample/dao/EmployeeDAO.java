@@ -12,7 +12,7 @@ public interface EmployeeDAO {
 
     boolean insert(Employee employee);
 
-    void delete(String nif);
+    boolean delete(String nif);
 
     List<Employee> list(String departmentName);
 }

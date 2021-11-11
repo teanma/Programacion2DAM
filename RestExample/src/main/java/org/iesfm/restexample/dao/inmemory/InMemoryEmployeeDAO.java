@@ -26,29 +26,22 @@ public class InMemoryEmployeeDAO implements EmployeeDAO {
     public boolean insert(Employee employee) {
         if (!employees.containsKey(employee.getNif())) {
             employees.put(employee.getNif(), employee);
-        } else {
-            System.out.println("El usuario ya existe");
+            return true;
         }
         return false;
     }
 
     @Override
-    public void delete(String nif) {
-        if (employees.containsKey(nif)) {
+    public boolean delete(String nif) {
+        if(employees.containsKey(nif)) {
             employees.remove(nif);
-        } else {
-            System.out.println("El usuario no existe");
+            return true;
         }
+        return false;
     }
 
     @Override
     public List<Employee> list(String departmentName) {
-        List<Employee> employees = new LinkedList<>();
-        for (Employee employee : list()) {
-            if (employee.getDepartment_name().contains(departmentName)) {
-                employees.add(employee);
-            }
-        }
-        return employees;
+        return list();
     }
 }
