@@ -1,0 +1,45 @@
+2021-11-22 13:19:03 INFO  ScannerUtils:15 - Introduce el nombre de usuaio
+2021-11-22 13:20:44 INFO  ScannerUtils:16 - Introduce el nombre de usuaio
+2021-11-22 13:22:58 INFO  ScannerUtils:21 - Introduce la ruta al archivo de usuarios
+2021-11-22 13:23:18 INFO  ScannerUtils:16 - Introduce el nombre de usuario
+2021-11-22 13:23:27 INFO  ScannerUtils:21 - Introduce la ruta al archivo de usuarios
+2021-11-22 13:23:51 INFO  ScannerUtils:31 - Error al crear el archivo de usuarios
+java.io.IOException: Permiso denegado
+	at java.base/java.io.UnixFileSystem.createFileExclusively(Native Method)
+	at java.base/java.io.File.createNewFile(File.java:1035)
+	at org.iesfm.ficheros.ScannerUtils.pideRuta(ScannerUtils.java:29)
+	at org.iesfm.ficheros.Main.main(Main.java:14)
+2021-11-22 13:23:51 INFO  FileUtils:22 - Error al leer el archivo
+java.io.FileNotFoundException: /etc/users.txt (No existe el archivo o el directorio)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileReader.<init>(FileReader.java:75)
+	at org.iesfm.ficheros.FileUtils.containsUser(FileUtils.java:14)
+	at org.iesfm.ficheros.Main.main(Main.java:16)
+2021-11-22 13:23:51 ERROR FileUtils:31 - Error al escribir en el archivo de usuarios
+2021-11-22 13:23:51 INFO  Main:20 - Usuario registrado correctamente
+2021-11-22 13:24:00 INFO  ScannerUtils:16 - Introduce el nombre de usuario
+2021-11-22 13:24:07 INFO  ScannerUtils:21 - Introduce la ruta al archivo de usuarios
+2021-11-22 13:36:30 INFO  ScannerUtils:16 - Introduce el nombre de usuario
+2021-11-22 13:36:40 INFO  ScannerUtils:21 - Introduce la ruta al archivo de usuarios
+2021-11-22 13:36:59 ERROR Main:26 - Error al registrar al usuario
+java.io.IOException: No existe el archivo o el directorio
+	at java.base/java.io.UnixFileSystem.createFileExclusively(Native Method)
+	at java.base/java.io.File.createNewFile(File.java:1035)
+	at org.iesfm.ficheros.ScannerUtils.pideRuta(ScannerUtils.java:29)
+	at org.iesfm.ficheros.Main.main(Main.java:17)
+2021-11-22 13:39:44 INFO  ScannerUtils:16 - Introduce el nombre de usuario
+2021-11-22 13:39:49 INFO  ScannerUtils:21 - Introduce la ruta al archivo de usuarios
+2021-11-22 13:40:13 ERROR Main:26 - Error al registrar al usuario
+java.io.IOException: No existe el archivo o el directorio
+	at java.base/java.io.UnixFileSystem.createFileExclusively(Native Method)
+	at java.base/java.io.File.createNewFile(File.java:1035)
+	at org.iesfm.ficheros.ScannerUtils.pideRuta(ScannerUtils.java:29)
+	at org.iesfm.ficheros.Main.main(Main.java:17)
+2021-11-22 13:42:20 INFO  ScannerUtils:16 - Introduce el nombre de usuario
+2021-11-22 13:42:23 INFO  ScannerUtils:21 - Introduce la ruta al archivo de usuarios
+2021-11-22 13:43:21 INFO  Main:23 - Usuario registrado correctamente
+2021-11-22 13:44:09 INFO  ScannerUtils:16 - Introduce el nombre de usuario
+2021-11-22 13:44:13 INFO  ScannerUtils:21 - Introduce la ruta al archivo de usuarios
+2021-11-22 13:44:31 INFO  Main:23 - Usuario registrado correctamente
