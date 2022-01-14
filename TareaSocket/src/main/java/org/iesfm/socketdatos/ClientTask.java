@@ -21,13 +21,15 @@ public class ClientTask implements Runnable {
             String line;
             while ((line = reader.readLine()) != null) {
                 File path = FileUtils.createFile();
-                try (FileWriter writer = new FileWriter(path, true)) {
-                    writer.append(line);
-                }
+                //while (line.equals(":end")) {
+                    try (FileWriter writer = new FileWriter(path, true)) {
+                        writer.append(line);
+                    }
+                //}
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(":end");
+        //System.out.println(":end");
     }
 }

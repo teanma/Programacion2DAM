@@ -12,13 +12,16 @@ public class Client {
     private final static Logger log = LoggerFactory.getLogger(Client.class);
 
     public static void main(String[] args) {
+        String serverIp = "localhost";
+        int serverPort = 4000;
+
         try {
-            Socket socket = new Socket("localhost", 4000);
-            Scanner scan = new Scanner(System.in);
-            ClientTask clientTask = new ClientTask(scan, socket);
-            clientTask.run();
+            Socket socket = new Socket(serverIp, serverPort);
+            Scanner scanner = new Scanner(System.in);
+            Thread clientTask = new Thread(new ClientTask(scanner, socket));
+            clientTask.start();
         } catch (IOException e) {
-            log.error("Error al conectarse", e);
+            e.printStackTrace();
         }
     }
 }

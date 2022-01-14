@@ -18,15 +18,14 @@ public class ServerTask implements Runnable {
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                System.out.println(line);
                 try (PrintWriter writer = new PrintWriter(socket.getOutputStream())) {
-                    writer.println(line);
+                    writer.write(line + ":end");
                     writer.flush();
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(":end");
+        //System.out.println(":end");
     }
 }

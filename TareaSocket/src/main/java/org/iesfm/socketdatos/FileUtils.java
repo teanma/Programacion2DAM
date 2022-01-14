@@ -19,6 +19,7 @@ public class FileUtils {
 
         if (!file.exists()) {
             System.out.println("El fichero no existe");
+            System.exit(0);
         } else {
             return file;
         }

@@ -8,19 +8,19 @@ import java.io.IOException;
 import java.net.BindException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Server {
 
     private final static Logger log = LoggerFactory.getLogger(Server.class);
 
     public static void main(String[] args) {
+        int serverPort = 4000;
         try {
-            ServerSocket ss = new ServerSocket(4000);
+            ServerSocket ss = new ServerSocket(serverPort);
             Socket socket = ss.accept();
-            ServerTask serverTask = new ServerTask(socket);
-            serverTask.run();
-        } catch (BindException e) {
-            log.error("El puerto 4000 ya está en uso", e);
+            Thread serverTask = new Thread(new ServerTask(socket));
+            serverTask.start();
         } catch (IOException e) {
             e.printStackTrace();
         }
