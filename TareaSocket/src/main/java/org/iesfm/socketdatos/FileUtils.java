@@ -27,7 +27,7 @@ public class FileUtils {
     }
 
     public static File createFile() {
-        log.info("Introduce la ruta del fichero");
+        log.info("Introduce la ruta del fichero a crear");
         File file = new File(scan.nextLine());
 
         if (file.exists()) {
