@@ -18,7 +18,7 @@ public class FileUtils {
         File file = new File(scan.nextLine());
 
         if (!file.exists()) {
-            System.out.println("El fichero no existe");
+            System.err.println("El fichero no existe");
             System.exit(0);
         } else {
             return file;
@@ -31,7 +31,7 @@ public class FileUtils {
         File file = new File(scan.nextLine());
 
         if (file.exists()) {
-            System.out.println("El fichero ya existe");
+            System.err.println("El fichero ya existe");
             System.exit(0);
         } else {
             try {
