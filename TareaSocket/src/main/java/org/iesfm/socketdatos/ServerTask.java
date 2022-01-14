@@ -17,11 +17,13 @@ public class ServerTask implements Runnable {
 
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line;
-            while ((line = reader.readLine()) != null) {
                 try (PrintWriter writer = new PrintWriter(socket.getOutputStream())) {
-                    writer.write(line + ":end");
+                    while ((line = reader.readLine()) != null) {
+                    writer.write(line + " ");
                     writer.flush();
                 }
+                    writer.write(":end");
+                    writer.flush();
             }
         } catch (IOException e) {
             e.printStackTrace();
