@@ -15,7 +15,14 @@ public class FileUtils {
 
     public static File askForFilePath() {
         log.info("Introduce la ruta del fichero");
-        return new File(scan.nextLine());
+        File file = new File(scan.nextLine());
+
+        if (!file.exists()) {
+            System.out.println("El fichero no existe");
+        } else {
+            return file;
+        }
+        return null;
     }
 
     public static File createFile() {

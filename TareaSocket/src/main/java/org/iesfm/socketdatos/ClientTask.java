@@ -16,17 +16,13 @@ public class ClientTask implements Runnable {
 
     @Override
     public void run() {
-        File path = FileUtils.createFile();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-                try (PrintWriter writer = new PrintWriter(socket.getOutputStream())) {
-                    String message = scan.nextLine();
-                    writer.println(message);
-                    writer.println(line);
-                    writer.flush();
+                File path = FileUtils.createFile();
+                try (FileWriter writer = new FileWriter(path, true)) {
+                    writer.append(line);
                 }
             }
         } catch (IOException e) {
