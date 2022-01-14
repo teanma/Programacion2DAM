@@ -22,7 +22,7 @@ public class ClientTask implements Runnable {
             while ((line = reader.readLine()) != null) {
                 File path = FileUtils.createFile();
                     try (FileWriter writer = new FileWriter(path, true)) {
-                        writer.append(line);
+                        writer.append(line).append("\n");
                     }
             }
         } catch (IOException e) {
