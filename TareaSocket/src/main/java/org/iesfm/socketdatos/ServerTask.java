@@ -22,12 +22,11 @@ public class ServerTask implements Runnable {
                     writer.write(line + " ");
                     writer.flush();
                 }
-                    writer.write(":end");
+                    writer.println(":end");
                     writer.flush();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //System.out.println(":end");
     }
 }
