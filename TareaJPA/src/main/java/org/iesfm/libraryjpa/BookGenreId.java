@@ -1,23 +1,23 @@
 package org.iesfm.libraryjpa;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Objects;
 
-@Entity
-@IdClass(BookGenreId.class)
-@Table(name = "book_genre")
-public class BookGenre {
+public class BookGenreId implements Serializable {
 
-    @Id
     @Column(nullable = false)
     private String isbn;
-    @Id
     @Column(nullable = false)
     private String genre;
 
-    public BookGenre(String isbn, String genre) {
+    public BookGenreId(String isbn, String genre) {
         this.isbn = isbn;
         this.genre = genre;
+    }
+
+    public BookGenreId() {
     }
 
     public String getIsbn() {
@@ -40,9 +40,8 @@ public class BookGenre {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        BookGenre bookGenre = (BookGenre) o;
-        return Objects.equals(isbn, bookGenre.isbn) &&
-                Objects.equals(genre, bookGenre.genre);
+        BookGenreId that = (BookGenreId) o;
+        return Objects.equals(isbn, that.isbn) && Objects.equals(genre, that.genre);
     }
 
     @Override

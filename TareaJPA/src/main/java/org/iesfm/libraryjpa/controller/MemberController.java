@@ -21,7 +21,7 @@ public class MemberController {
         this.memberRepository = memberRepository;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/members")
+    @RequestMapping(method = RequestMethod.GET, path = "/members/{name}")
     public List<Member> listByName(@PathVariable("name") String name) {
         return memberRepository.findMembersByName(name);
     }

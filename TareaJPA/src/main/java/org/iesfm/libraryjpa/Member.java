@@ -19,9 +19,9 @@ public class Member {
     private String surname;
     @OneToMany(
             orphanRemoval = true,
-            cascade = CascadeType.ALL,
-            mappedBy = "id"
+            cascade = CascadeType.ALL
     )
+    @JoinColumn(name = "member_id", referencedColumnName = "id")
     private List<BookLend> bookLends;
 
     public Member(int id, String nif, String name, String surname, List<BookLend> bookLends) {

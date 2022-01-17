@@ -18,7 +18,7 @@ public class BookController {
         this.bookRepository = bookRepository;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/books")
+    @RequestMapping(method = RequestMethod.GET, path = "/books/{author}")
     public List<Book> listByAuthor(@PathVariable("author") String author) {
         return bookRepository.findBookByAuthor(author);
     }
