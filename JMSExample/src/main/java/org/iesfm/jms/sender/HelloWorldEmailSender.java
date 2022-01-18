@@ -1,5 +1,6 @@
-package org.iesfm.jms;
+package org.iesfm.jms.sender;
 
+import org.iesfm.jms.Email;
 import org.springframework.jms.core.JmsTemplate;
 
 public class HelloWorldEmailSender {

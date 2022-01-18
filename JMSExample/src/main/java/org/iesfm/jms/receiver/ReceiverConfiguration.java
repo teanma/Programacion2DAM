@@ -1,20 +1,19 @@
-package org.iesfm.jms;
+package org.iesfm.jms.receiver;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
 import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.jms.support.converter.MessageType;
 
 @Configuration
-@PropertySource("application.properties")
-public class JmsConfiguration {
+@EnableJms
+public class ReceiverConfiguration {
 
     @Bean
-    public HelloWorldEmailSender helloWorldEmailSender(JmsTemplate jmsTemplate) {
-        return new HelloWorldEmailSender(jmsTemplate);
+    public EmailReceiverMessage emailRecieverMessage() {
+        return new EmailReceiverMessage();
     }
 
     @Bean

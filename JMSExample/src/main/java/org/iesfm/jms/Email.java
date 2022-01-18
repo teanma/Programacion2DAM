@@ -68,4 +68,14 @@ public class Email {
     public int hashCode() {
         return Objects.hash(to, from, title, body);
     }
+
+    @Override
+    public String toString() {
+        return "Email{" +
+                "to='" + to + '\'' +
+                ", from='" + from + '\'' +
+                ", title='" + title + '\'' +
+                ", body='" + body + '\'' +
+                '}';
+    }
 }

@@ -1,16 +1,15 @@
-package org.iesfm.jms;
+package org.iesfm.jms.receiver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class Main {
+public class ReceiverMain {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext context =
-                SpringApplication.run(Main.class, args);
-
-        context.getBean(HelloWorldEmailSender.class).send();
+                SpringApplication.run(ReceiverMain.class, args);
+        context.getBean(EmailReceiverMessage.class);
     }
 }
