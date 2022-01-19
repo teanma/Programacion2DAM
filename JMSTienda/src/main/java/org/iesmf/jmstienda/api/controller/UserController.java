@@ -1,4 +1,4 @@
-package org.iesmf.jmstienda.controller;
+package org.iesmf.jmstienda.api.controller;
 
 import org.iesmf.jmstienda.Email;
 import org.iesmf.jmstienda.User;
@@ -24,9 +24,9 @@ public class UserController {
         System.out.println(user.toString());
         Email email = new Email(
                 user.getEmail(),
-                "Bienvenido " + user.getUsername(),
-                "Gracias por registrarte " + user.getUsername()
+                "Bienvenido, " + user.getUsername(),
+                "Gracias por registrarte, " + user.getUsername()
         );
-        jmsTemplate.convertAndSend("emails", email);
+        jmsTemplate.convertAndSend("shopMail", email);
     }
 }

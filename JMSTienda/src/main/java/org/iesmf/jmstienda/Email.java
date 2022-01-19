@@ -11,7 +11,11 @@ public class Email {
     private String title;
     private String body;
 
-    public Email(String to, String title, String body) {
+    @JsonCreator
+    public Email(
+            @JsonProperty ("to") String to,
+            @JsonProperty ("title") String title,
+            @JsonProperty ("body") String body) {
         this.to = to;
         this.title = title;
         this.body = body;

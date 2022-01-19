@@ -1,4 +1,4 @@
-package org.iesmf.jmstienda.receiver;
+package org.iesmf.jmstienda.api;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,12 +9,7 @@ import org.springframework.jms.support.converter.MessageType;
 
 @Configuration
 @EnableJms
-public class ReceiverConfiguration {
-
-    @Bean
-    public EmailReceiver emailRecieverMessage() {
-        return new EmailReceiver();
-    }
+public class APIConfiguration {
 
     @Bean
     public MessageConverter jacksonJmsMessageConverter() {
