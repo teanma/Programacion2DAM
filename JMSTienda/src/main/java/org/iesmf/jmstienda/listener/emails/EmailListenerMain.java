@@ -15,6 +15,6 @@ public class EmailListenerMain {
     public static void main(String[] args) {
         SpringApplication application = new SpringApplication(EmailListenerMain.class);
         application.setWebApplicationType(WebApplicationType.NONE);
-        application.run(args);
+        SpringApplication.run(EmailListenerMain.class, args);
     }
 }
