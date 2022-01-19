@@ -12,7 +12,7 @@ import java.util.List;
 public interface BookLendRepository extends JpaRepository<BookLend, BookLendId> {
 
     @Query(
-            value = "SELECT b.* FROM book_lend b INNER JOIN member m ON m.member_id=b.id WHERE nif=?",
+            value = "SELECT b.* FROM book_lend b INNER JOIN member m ON m.id=b.member_id WHERE nif=?",
             nativeQuery = true
     )
 

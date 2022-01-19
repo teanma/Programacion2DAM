@@ -2,10 +2,7 @@ package org.iesfm.libraryjpa.controller;
 
 import org.iesfm.libraryjpa.Book;
 import org.iesfm.libraryjpa.repository.BookRepository;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,14 +15,12 @@ public class BookController {
         this.bookRepository = bookRepository;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/books/{author}")
-    public List<Book> listByAuthor(@PathVariable("author") String author) {
-        return bookRepository.findBookByAuthor(author);
+    @RequestMapping(method = RequestMethod.GET, path = "/books")
+    public List<Book> listByAuthor(@RequestParam(value = "author", required = false) String author) {
+        if (author == null) {
+            return bookRepository.findAllLendedBooks();
+        } else {
+            return bookRepository.findBookByAuthor(author);
+        }
     }
-
-    @RequestMapping(method = RequestMethod.GET, path = "/booklends/{isbn}/books")
-    public List<Book> listLendedBooks(@PathVariable("isbn") String booklendIsbn) {
-        return bookRepository.findLendedBooks(booklendIsbn);
-    }
-
 }

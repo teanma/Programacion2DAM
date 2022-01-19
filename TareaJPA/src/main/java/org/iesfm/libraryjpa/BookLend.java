@@ -18,8 +18,9 @@ public class BookLend {
     @Id
     @Column(name = "lend_date", nullable = false)
     private Date lendDate;
-    @Id
+
     @OneToOne
+    @JoinColumn(name = "isbn", referencedColumnName = "isbn", insertable = false, updatable = false)
     private Book book;
 
     public BookLend(int memberId, String isbn, Date lendDate, Book book) {
@@ -27,6 +28,9 @@ public class BookLend {
         this.isbn = isbn;
         this.lendDate = lendDate;
         this.book = book;
+    }
+
+    public BookLend() {
     }
 
     public int getMemberId() {

@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface MemberRepository extends JpaRepository<Member, Integer> {
 
-    List<Member> findMembersByName(String name);
+    List<Member> findMemberByName(String name);
     int deleteByNameAndSurname(String name, String surname);
 }

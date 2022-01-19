@@ -28,6 +28,9 @@ public class Book {
         this.genres = genres;
     }
 
+    public Book() {
+    }
+
     public String getIsbn() {
         return isbn;
     }

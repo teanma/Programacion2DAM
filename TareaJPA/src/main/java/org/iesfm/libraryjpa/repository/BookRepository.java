@@ -13,9 +13,9 @@ public interface BookRepository extends JpaRepository<Book, String> {
     List<Book> findBookByAuthor(String author);
 
     @Query(
-            value = "SELECT b.* FROM book b INNER JOIN book_lend bl ON bl.isbn=b.isbn WHERE isbn=?",
+            value = "SELECT b.* FROM book b INNER JOIN book_lend bl ON bl.isbn=b.isbn",
             nativeQuery = true
     )
 
-    List<Book> findLendedBooks(String bookIsbn);
+    List<Book> findAllLendedBooks();
 }

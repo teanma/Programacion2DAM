@@ -32,6 +32,9 @@ public class Member {
         this.bookLends = bookLends;
     }
 
+    public Member() {
+    }
+
     public int getId() {
         return id;
     }
