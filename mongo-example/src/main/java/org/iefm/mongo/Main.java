@@ -18,15 +18,25 @@ public class Main {
 
         EmailRepository emailRepository = context.getBean(EmailRepository.class);
 
-        //emailRepository.save(
-          //      new Email(
-            //            List.of("alguien@gmail.com", "otro@gmail.com"),
+        //emailRepository.insert(
+          //     new Email(
+            //           List.of("alguien@gmail.com", "otro@gmail.com"),
               //  "Bienvenido",
                 //"Hola, te has registrado correctamente"
                 //)
         //);
 
-        List<Email> emails = emailRepository.findAll();
+        //List<Email> emails = emailRepository.findByTo("otro@gmail.com");
+        //for (Email email : emails) {
+          //  System.out.println(email.toString());
+        //}
+
+        List<Email> emails = emailRepository.findByTo(
+                List.of(
+                        "alguien@hotmail.com",
+                        "otro@hotmail.com"
+                )
+        );
         for (Email email : emails) {
             System.out.println(email.toString());
         }

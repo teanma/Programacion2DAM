@@ -25,7 +25,7 @@ public class MemberController {
 
     @Transactional
     @RequestMapping(method = RequestMethod.DELETE, path = "/members")
-    public void deleteByNameAndSurname(@RequestParam(value = "name", required = false) String name, @RequestParam(value = "surname") String surname) {
+    public void deleteByNameAndSurname(@RequestParam(value = "name", required = false) String name, @RequestParam(value = "surname", required = false) String surname) {
         int deletedRows = memberRepository.deleteByNameAndSurname(name, surname);
         if (deletedRows == 0) {
             throw new ResponseStatusException(
