@@ -12,8 +12,6 @@ import java.util.Scanner;
 
 public class Server {
 
-    private final static Logger log = LoggerFactory.getLogger(Server.class);
-
     public static void main(String[] args) {
         int serverPort = 4000;
         try {

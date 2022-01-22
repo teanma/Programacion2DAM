@@ -9,8 +9,6 @@ import java.util.Scanner;
 
 public class Client {
 
-    private final static Logger log = LoggerFactory.getLogger(Client.class);
-
     public static void main(String[] args) {
         String serverIp = "localhost";
         int serverPort = 4000;
