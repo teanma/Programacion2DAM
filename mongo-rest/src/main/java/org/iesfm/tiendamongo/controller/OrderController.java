@@ -1,15 +1,11 @@
 package org.iesfm.tiendamongo.controller;
 
-import org.aspectj.weaver.ast.Or;
 import org.iesfm.tiendamongo.Article;
 import org.iesfm.tiendamongo.Client;
 import org.iesfm.tiendamongo.Order;
 import org.iesfm.tiendamongo.repository.OrderRepository;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
@@ -25,15 +21,15 @@ public class OrderController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/orders")
     public void insert(@RequestBody Order order) {
-        if (orderRepository.existsById(order.getId())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Order already exists");
+        if (!orderRepository.existsById(order.getId())) {
+            orderRepository.save(order);
         } else {
-            orderRepository.insertOrder(order);
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Order already exists");
         }
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/orders")
-    public List<Order> list() {
-        return orderRepository.listClientOrders();
+    @RequestMapping(method = RequestMethod.GET, path = "/clients/{nif}/orders")
+    public List<Order> list(@PathVariable String nif) {
+        return orderRepository.findByNif(nif);
     }
 }

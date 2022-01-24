@@ -23,15 +23,15 @@ public class ClientController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/clients")
     public void insert(@RequestBody Client client) {
-        if (client.getNif() != null) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Client already exists");
+        if (!clientRepository.existsById(client.getNif())) {
+            clientRepository.save(client);
         } else {
-            clientRepository.insertClient(client);
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Client already exists");
         }
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/clients")
     public List<Client> list() {
-        return clientRepository.listClients();
+        return clientRepository.findAll();
     }
 }

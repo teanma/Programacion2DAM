@@ -19,15 +19,15 @@ public class ArticleController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/articles")
     public void insert(@RequestBody Article article) {
-        if (articleRepository.existsById(article.getId())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Article already exists");
+        if (!articleRepository.existsById(article.getId())) {
+            articleRepository.save(article);
         } else {
-            articleRepository.insertArticle(article);
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Article already exists");
         }
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/articles")
     public List<Article> list() {
-        return articleRepository.listArticles();
+        return articleRepository.findAll();
     }
 }
