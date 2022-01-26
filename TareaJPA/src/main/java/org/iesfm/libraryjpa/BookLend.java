@@ -1,5 +1,8 @@
 package org.iesfm.libraryjpa;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
@@ -23,15 +26,17 @@ public class BookLend {
     @JoinColumn(name = "isbn", referencedColumnName = "isbn", insertable = false, updatable = false)
     private Book book;
 
-    public BookLend(int memberId, String isbn, Date lendDate, Book book) {
+    /*@JsonCreator
+    public BookLend(
+            @JsonProperty("memberId") int memberId,
+            @JsonProperty("isbn") String isbn,
+            @JsonProperty("lendDate") Date lendDate,
+            @JsonProperty("book") Book book) {
         this.memberId = memberId;
         this.isbn = isbn;
         this.lendDate = lendDate;
         this.book = book;
-    }
-
-    public BookLend() {
-    }
+    }*/
 
     public int getMemberId() {
         return memberId;

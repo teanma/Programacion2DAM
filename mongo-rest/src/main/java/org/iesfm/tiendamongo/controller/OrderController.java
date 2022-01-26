@@ -3,6 +3,7 @@ package org.iesfm.tiendamongo.controller;
 import org.iesfm.tiendamongo.Article;
 import org.iesfm.tiendamongo.Client;
 import org.iesfm.tiendamongo.Order;
+import org.iesfm.tiendamongo.repository.ClientRepository;
 import org.iesfm.tiendamongo.repository.OrderRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +15,11 @@ import java.util.List;
 public class OrderController {
 
     private OrderRepository orderRepository;
+    private ClientRepository clientRepository;
 
-    public OrderController(OrderRepository orderRepository) {
+    public OrderController(OrderRepository orderRepository, ClientRepository clientRepository) {
         this.orderRepository = orderRepository;
+        this.clientRepository = clientRepository;
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/orders")
@@ -30,6 +33,10 @@ public class OrderController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/clients/{nif}/orders")
     public List<Order> list(@PathVariable String nif) {
-        return orderRepository.findByNif(nif);
+        if(!clientRepository.existsById(nif)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found");
+        } else {
+            return orderRepository.findByNif(nif);
+        }
     }
 }

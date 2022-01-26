@@ -1,5 +1,8 @@
 package org.iesfm.libraryjpa;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Id;
@@ -16,14 +19,15 @@ public class BookLendId implements Serializable {
     @Column(name = "lend_date", nullable = false)
     private Date lendDate;
 
-    public BookLendId(int memberId, String isbn, Date lendDate) {
+    /*@JsonCreator
+    public BookLendId(
+            @JsonProperty("memberId") int memberId,
+            @JsonProperty("isbn") String isbn,
+            @JsonProperty("lendDate") Date lendDate) {
         this.memberId = memberId;
         this.isbn = isbn;
         this.lendDate = lendDate;
-    }
-
-    public BookLendId() {
-    }
+    }*/
 
     public int getMemberId() {
         return memberId;
