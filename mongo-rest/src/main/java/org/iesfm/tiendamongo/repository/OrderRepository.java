@@ -1,5 +1,6 @@
 package org.iesfm.tiendamongo.repository;
 
+import org.iesfm.tiendamongo.Article;
 import org.iesfm.tiendamongo.Order;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
@@ -19,4 +20,6 @@ public interface OrderRepository extends MongoRepository<Order, Integer> {
     )*/
 
     List<Order> findByNif(String nif);
+
+    //List<Article> listByOrderArticles(int orderId);
 }
