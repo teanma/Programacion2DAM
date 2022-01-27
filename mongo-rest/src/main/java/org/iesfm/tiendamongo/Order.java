@@ -3,6 +3,7 @@ package org.iesfm.tiendamongo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
@@ -12,6 +13,7 @@ import java.util.Objects;
 @Document(collection = "orders")
 public class Order {
 
+    @Id
     private int id;
     private String nif;
     private double price;

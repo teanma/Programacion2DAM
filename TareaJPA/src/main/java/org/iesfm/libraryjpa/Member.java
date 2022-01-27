@@ -1,5 +1,8 @@
 package org.iesfm.libraryjpa;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
@@ -23,17 +26,6 @@ public class Member {
     )
     @JoinColumn(name = "member_id", referencedColumnName = "id")
     private List<BookLend> bookLends;
-
-    public Member(int id, String nif, String name, String surname, List<BookLend> bookLends) {
-        this.id = id;
-        this.nif = nif;
-        this.name = name;
-        this.surname = surname;
-        this.bookLends = bookLends;
-    }
-
-    public Member() {
-    }
 
     public int getId() {
         return id;

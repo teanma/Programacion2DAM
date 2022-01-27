@@ -2,6 +2,7 @@ package org.iesfm.tiendamongo;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.Objects;
 @Document(collection = "articles")
 public class Article {
 
+    @Id
     private int id;
     private String name;
     private double price;

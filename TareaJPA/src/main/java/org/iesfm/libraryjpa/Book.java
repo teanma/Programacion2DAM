@@ -1,7 +1,11 @@
 package org.iesfm.libraryjpa;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "book")
@@ -20,16 +24,6 @@ public class Book {
     )
     @Column(name = "genre")
     private List<String> genres;
-
-    public Book(String isbn, String title, String author, List<String> genres) {
-        this.isbn = isbn;
-        this.title = title;
-        this.author = author;
-        this.genres = genres;
-    }
-
-    public Book() {
-    }
 
     public String getIsbn() {
         return isbn;
@@ -61,5 +55,18 @@ public class Book {
 
     public void setGenres(List<String> genres) {
         this.genres = genres;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(isbn, book.isbn) && Objects.equals(title, book.title) && Objects.equals(author, book.author) && Objects.equals(genres, book.genres);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(isbn, title, author, genres);
     }
 }
