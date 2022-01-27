@@ -25,18 +25,6 @@ public class Book {
     @Column(name = "genre")
     private List<String> genres;
 
-    /*@JsonCreator
-    public Book(
-            @JsonProperty("isbn") String isbn,
-            @JsonProperty("title") String title,
-            @JsonProperty("author") String author,
-            @JsonProperty("genres") List<String> genres) {
-        this.isbn = isbn;
-        this.title = title;
-        this.author = author;
-        this.genres = genres;
-    }*/
-
     public String getIsbn() {
         return isbn;
     }

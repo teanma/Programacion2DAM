@@ -27,20 +27,6 @@ public class Member {
     @JoinColumn(name = "member_id", referencedColumnName = "id")
     private List<BookLend> bookLends;
 
-    /*@JsonCreator
-    public Member(
-            @JsonProperty("id") int id,
-            @JsonProperty("nif") String nif,
-            @JsonProperty("name") String name,
-            @JsonProperty("surname") String surname,
-            @JsonProperty("bookLends") List<BookLend> bookLends) {
-        this.id = id;
-        this.nif = nif;
-        this.name = name;
-        this.surname = surname;
-        this.bookLends = bookLends;
-    }*/
-
     public int getId() {
         return id;
     }

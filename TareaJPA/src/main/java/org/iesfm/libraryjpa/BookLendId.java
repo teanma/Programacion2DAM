@@ -19,16 +19,6 @@ public class BookLendId implements Serializable {
     @Column(name = "lend_date", nullable = false)
     private Date lendDate;
 
-    /*@JsonCreator
-    public BookLendId(
-            @JsonProperty("memberId") int memberId,
-            @JsonProperty("isbn") String isbn,
-            @JsonProperty("lendDate") Date lendDate) {
-        this.memberId = memberId;
-        this.isbn = isbn;
-        this.lendDate = lendDate;
-    }*/
-
     public int getMemberId() {
         return memberId;
     }

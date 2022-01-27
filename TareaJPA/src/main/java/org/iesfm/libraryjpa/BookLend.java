@@ -26,18 +26,6 @@ public class BookLend {
     @JoinColumn(name = "isbn", referencedColumnName = "isbn", insertable = false, updatable = false)
     private Book book;
 
-    /*@JsonCreator
-    public BookLend(
-            @JsonProperty("memberId") int memberId,
-            @JsonProperty("isbn") String isbn,
-            @JsonProperty("lendDate") Date lendDate,
-            @JsonProperty("book") Book book) {
-        this.memberId = memberId;
-        this.isbn = isbn;
-        this.lendDate = lendDate;
-        this.book = book;
-    }*/
-
     public int getMemberId() {
         return memberId;
     }
