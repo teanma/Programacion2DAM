@@ -1,4 +1,4 @@
-package org.iesfm.uiexample;
+package org.iesfm.uiexample.window;
 
 public class Main {
 
