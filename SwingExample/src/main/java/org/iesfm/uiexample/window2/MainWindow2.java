@@ -14,7 +14,7 @@ public class MainWindow2 extends JFrame {
 
     private JButton modifyBookButton;
 
-    private JLabel existingBooksLabel;
+    private JLabel booksLabel;
 
     private TextField isbnTextField, titleTextField, authorTextField, yearTextField;
 
@@ -23,41 +23,41 @@ public class MainWindow2 extends JFrame {
         super.frameInit();
         setVisible(true);
         setLocationRelativeTo(null);
-        setBounds(0, 0, 500, 450);
+        setBounds(0, 0, 1080, 720);
         setTitle("Catálogo de biblioteca");
         setLayout(null);
         setLocationRelativeTo(null);
         add(getBookPanel());
         add(getCreateBookButton());
         add(getModifyBookButton());
-        add(getExistingBooksLabel());
+        //add(getExistingBooksLabel());
         repaint();
         revalidate();
     }
 
     private JPanel getBookPanel() {
         bookPanel = new JPanel();
-        bookPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        bookPanel.setBounds(60, 50, 370, 250);
+        bookPanel.setBorder(BorderFactory.createTitledBorder("Libros disponibles"));
+        bookPanel.setBounds(10, 10, 1060, 600);
+        bookPanel.setLayout(new GridLayout(1, 1));
+        //bookPanel.add(getBooksLabel(), BorderLayout.CENTER);
         return bookPanel;
     }
 
     private JButton getCreateBookButton() {
         createBookButton = new JButton("Crear libro");
-        createBookButton.setBounds(60, 330, 150, 20);
+        createBookButton.setBounds(160, 635, 150, 30);
         createBookButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                isbnTextField = new TextField(10);
-                titleTextField = new TextField(10);
-                authorTextField = new TextField(10);
-                yearTextField = new TextField(10);
+                isbnTextField = new TextField(25);
+                titleTextField = new TextField(25);
+                authorTextField = new TextField(25);
+                yearTextField = new TextField(25);
 
                 createBookPanel = new JPanel();
 
-                FlowLayout f = new FlowLayout(FlowLayout.LEFT);
-
-                createBookPanel.setLayout(f);
+                createBookPanel.setLayout(new GridLayout(4, 2));
 
                 createBookPanel.add(new Label("ISBN:"));
                 createBookPanel.add(isbnTextField);
@@ -84,6 +84,8 @@ public class MainWindow2 extends JFrame {
                     System.out.println("Título: " + title);
                     System.out.println("Autor: " + author);
                     System.out.println("Año: " + year);
+
+                    //getBookPanel().setText(title);
                 } else {
                     JOptionPane.showMessageDialog(null, "Operación cancelada");
                 }
@@ -94,19 +96,17 @@ public class MainWindow2 extends JFrame {
 
     private JButton getModifyBookButton() {
         modifyBookButton = new JButton("Modificar libro");
-        modifyBookButton.setBounds(280, 330, 150, 20);
+        modifyBookButton.setBounds(770, 635, 150, 30);
         modifyBookButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                titleTextField = new TextField(10);
-                authorTextField = new TextField(10);
-                yearTextField = new TextField(10);
+                titleTextField = new TextField(25);
+                authorTextField = new TextField(25);
+                yearTextField = new TextField(25);
 
                 modifyBookPanel = new JPanel();
 
-                FlowLayout f2 = new FlowLayout(FlowLayout.LEFT);
-
-                modifyBookPanel.setLayout(f2);
+                modifyBookPanel.setLayout(new GridLayout(3, 2));
 
                 modifyBookPanel.add(new Label("Título:"));
                 modifyBookPanel.add(titleTextField);
@@ -134,11 +134,5 @@ public class MainWindow2 extends JFrame {
             }
         });
         return modifyBookButton;
-    }
-
-    private JLabel getExistingBooksLabel() {
-        existingBooksLabel = new JLabel("Libros disponibles");
-        existingBooksLabel.setBounds(60, 20, 150, 20);
-        return existingBooksLabel;
     }
 }
