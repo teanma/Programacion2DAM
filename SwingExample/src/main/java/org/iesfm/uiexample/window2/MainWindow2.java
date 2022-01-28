@@ -38,7 +38,7 @@ public class MainWindow2 extends JFrame {
     private JPanel getBookPanel() {
         bookPanel = new JPanel();
         bookPanel.setBorder(BorderFactory.createTitledBorder("Libros disponibles"));
-        bookPanel.setBounds(10, 10, 1060, 600);
+        bookPanel.setBounds(10, 10, 1045, 600);
         bookPanel.setLayout(new GridLayout(1, 1));
         //bookPanel.add(getBooksLabel(), BorderLayout.CENTER);
         return bookPanel;
@@ -46,7 +46,7 @@ public class MainWindow2 extends JFrame {
 
     private JButton getCreateBookButton() {
         createBookButton = new JButton("Crear libro");
-        createBookButton.setBounds(160, 635, 150, 30);
+        createBookButton.setBounds(160, 630, 150, 30);
         createBookButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -96,7 +96,7 @@ public class MainWindow2 extends JFrame {
 
     private JButton getModifyBookButton() {
         modifyBookButton = new JButton("Modificar libro");
-        modifyBookButton.setBounds(770, 635, 150, 30);
+        modifyBookButton.setBounds(770, 630, 150, 30);
         modifyBookButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
