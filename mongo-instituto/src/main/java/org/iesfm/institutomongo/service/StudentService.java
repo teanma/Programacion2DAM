@@ -25,19 +25,26 @@ public class StudentService {
         this.groupRepository = groupRepository;
     }
 
-    public boolean insertStudentToGroup(Student student, Group group) throws GroupNotFoundException {
+    public List<Student> listStudentsByGroup(int groupId) throws GroupNotFoundException {
+        if (!groupRepository.existsById(groupId)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Group not found");
+        }
+        return studentRepository.listStudentsByGroup(groupId);
+    }
+
+    /*public boolean insertStudentToGroup(Student student, Group group) throws GroupNotFoundException {
         if(!groupRepository.existsById(group.getId())) {
             return false;
         }
         studentRepository.insertToGroup(student);
         return true;
-    }
+    }*/
 
     public boolean delete(String nif) throws StudentNotFoundException {
         if(!studentRepository.existsById(nif)) {
             throw new StudentNotFoundException(nif);
         }
-        studentRepository.delete(nif);
+        studentRepository.deleteById(nif);
         return true;
     }
 
@@ -45,6 +52,7 @@ public class StudentService {
         if(!studentRepository.existsById(student.getNif())) {
             throw new StudentNotFoundException(student.getNif());
         }
-        return studentRepository.update(student);
+        studentRepository.updateByNif(student);
+        return true;
     }
 }

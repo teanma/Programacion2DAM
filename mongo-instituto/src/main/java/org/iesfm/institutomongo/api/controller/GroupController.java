@@ -24,14 +24,6 @@ public class GroupController {
         return groupService.list();
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "students/{nif}/groups")
-    public List<Group> listStudentsByGroup(@PathVariable ("nif") String nif) {
-        try {
-            return groupService.listStudentsByGroup(nif);
-        } catch (GroupNotFoundException e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No se encuentra el grupo " + e.getId());
-        }
-    }
 
     @RequestMapping(method = RequestMethod.POST, path = "/groups")
     public void insert(@RequestBody Group group) {

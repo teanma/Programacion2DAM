@@ -9,5 +9,4 @@ import java.util.List;
 @Repository
 public interface GroupRepository extends MongoRepository<Group, Integer> {
 
-    List<Group> findStudentsByGroup(String nif);
 }

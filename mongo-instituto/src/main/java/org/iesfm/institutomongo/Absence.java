@@ -1,6 +1,8 @@
 package org.iesfm.institutomongo;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
@@ -12,7 +14,10 @@ public class Absence {
     private Date date;
     private String module;
 
-    public Absence(Date date, String module) {
+    @JsonCreator
+    public Absence(
+            @JsonProperty("date") Date date,
+            @JsonProperty("module") String module) {
         this.date = date;
         this.module = module;
     }

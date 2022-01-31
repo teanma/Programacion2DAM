@@ -15,7 +15,7 @@ public class Student {
     private String nif;
     private String name;
     private String surname;
-    private String courseId;
+    private int courseId;
     private List<Absence> absences;
 
     @JsonCreator
@@ -23,7 +23,7 @@ public class Student {
             @JsonProperty("nif") String nif,
             @JsonProperty("name") String name,
             @JsonProperty("surname") String surname,
-            @JsonProperty("courseId") String courseId,
+            @JsonProperty("courseId") int courseId,
             @JsonProperty("absences") List<Absence> absences) {
         this.nif = nif;
         this.name = name;
@@ -56,11 +56,11 @@ public class Student {
         this.surname = surname;
     }
 
-    public String getCourseId() {
+    public int getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(String courseId) {
+    public void setCourseId(int courseId) {
         this.courseId = courseId;
     }
 
@@ -77,7 +77,7 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return Objects.equals(nif, student.nif) && Objects.equals(name, student.name) && Objects.equals(surname, student.surname) && Objects.equals(courseId, student.courseId) && Objects.equals(absences, student.absences);
+        return courseId == student.courseId && Objects.equals(nif, student.nif) && Objects.equals(name, student.name) && Objects.equals(surname, student.surname) && Objects.equals(absences, student.absences);
     }
 
     @Override

@@ -25,13 +25,6 @@ public class GroupService {
         return groupRepository.findAll();
     }
 
-    public List<Group> listStudentsByGroup(String nif) throws GroupNotFoundException {
-        if (!studentRepository.existsById(nif)) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Group not found");
-        }
-        return groupRepository.findStudentsByGroup(nif);
-    }
-
     public boolean insert(Group group) {
         if(groupRepository.existsById(group.getId())) {
             return false;
