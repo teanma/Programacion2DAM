@@ -20,6 +20,21 @@
         <spring.boot.version>2.6.3</spring.boot.version>
     </properties>
 
+    <scm>
+        <url>https://github.com/teanma/tienda-jms-multimodule</url>
+        <connection>scm:git:git://github.com/teanma/tienda-jms-multimodule.git</connection>
+        <developerConnection>scm:git:git@github.com:teanma/tienda-jms-multimodule.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/teanma/tienda-jms-multimodule</url>
+        </repository>
+    </distributionManagement>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -35,6 +50,11 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-json</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-mail</artifactId>
                 <version>${spring.boot.version}</version>
             </dependency>
         </dependencies>
