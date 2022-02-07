@@ -1,12 +1,15 @@
 package org.iesfm.library.pojos;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.List;
 import java.util.Objects;
 
-//@Document(collection = "books")
+@Document(collection = "books")
 public class Book {
 
-    //@Id
+    @Id
     private String isbn;
     private String title;
     private String author;

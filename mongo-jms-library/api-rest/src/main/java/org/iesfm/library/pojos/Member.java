@@ -1,12 +1,15 @@
 package org.iesfm.library.pojos;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.Objects;
 import java.util.Set;
 
-//@Document(collection = "members")
+@Document(collection = "members")
 public class Member {
 
-    //@Id
+    @Id
     private String nif;
     private String name;
     private String surname;
