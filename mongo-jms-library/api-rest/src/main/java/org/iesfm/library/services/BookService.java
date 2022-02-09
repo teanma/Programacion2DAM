@@ -33,7 +33,7 @@ public class BookService {
         return bookRepository.findAll();
     }
 
-    public List<BookLend> findMemberBookLends(String isbn, String nif) throws MemberNotFoundException {
+    public List<Book> findMemberBookLends(String isbn, String nif) throws MemberNotFoundException {
         if(!memberRepository.existsById(nif)) {
             throw new MemberNotFoundException(nif);
         }

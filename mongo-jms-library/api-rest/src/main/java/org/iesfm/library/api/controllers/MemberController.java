@@ -1,7 +1,9 @@
 package org.iesfm.library.api.controllers;
 
+import org.iesfm.library.exceptions.MemberNotFoundException;
 import org.iesfm.library.pojos.BookLend;
 import org.iesfm.library.pojos.Member;
+import org.iesfm.library.services.BookService;
 import org.iesfm.library.services.MemberService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,9 +18,11 @@ import java.util.List;
 public class MemberController {
 
     private MemberService memberService;
+    private BookService bookService;
 
-    public MemberController(MemberService memberService) {
+    public MemberController(MemberService memberService, BookService bookService) {
         this.memberService = memberService;
+        this.bookService = bookService;
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/members")
@@ -33,7 +37,12 @@ public class MemberController {
         return memberService.list();
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/members/{nif}/booklends")
     public List<BookLend> listMemberLends(String nif) {
-        return null;
+        try {
+            return memberService.memberLends(nif);
+        } catch (MemberNotFoundException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Member " + e.getNif() + " not found");
+        }
     }
 }

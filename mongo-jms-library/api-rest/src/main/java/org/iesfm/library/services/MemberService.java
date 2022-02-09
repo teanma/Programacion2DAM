@@ -32,11 +32,12 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-    public List<BookLend> memberBookLends(String nif) throws MemberNotFoundException {
-        if(!memberRepository.existsById(nif)) {
+    public List<BookLend> memberLends(String nif) throws MemberNotFoundException {
+        if(memberRepository.existsById(nif)) {
             throw new MemberNotFoundException(nif);
         }
-        return memberRepository.findMemberLendsByNif(nif);
+        List<BookLend> bookLends = memberRepository.findMemberLendsByNif(nif);
+        return bookLends;
     }
 
     public void addBooklend(String isbn, String nif, BookLend bookLend) {

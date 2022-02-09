@@ -10,6 +10,6 @@ import java.util.List;
 @Component
 public interface BookRepository extends MongoRepository<Book, String> {
 
-    List<BookLend> findLendedBooksByNif(String nif);
+    List<Book> findLendedBooksByNif(String nif);
 
 }

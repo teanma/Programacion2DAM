@@ -1,5 +1,6 @@
 package org.iesfm.library.api.controllers;
 
+import org.iesfm.library.exceptions.MemberNotFoundException;
 import org.iesfm.library.pojos.Book;
 import org.iesfm.library.pojos.BookLend;
 import org.iesfm.library.services.BookService;
@@ -30,7 +31,11 @@ public class BookController {
         return bookService.list();
     }
 
-    public List<Book> listMemberBookLends(String nif) {
-        return null;
+    public List<Book> listMemberBookLends(String isbn, String nif) {
+        try {
+            return bookService.findMemberBookLends(isbn, nif);
+        } catch (MemberNotFoundException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Member " + e.getNif() + " not found");
+        }
     }
 }
