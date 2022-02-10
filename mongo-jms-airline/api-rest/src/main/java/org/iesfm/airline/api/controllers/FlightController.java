@@ -1,6 +1,6 @@
 package org.iesfm.airline.api.controllers;
 
-import org.iesfm.airline.pojos.Flight;
+import org.iesfm.airline.Flight;
 import org.iesfm.airline.repository.FlightRepository;
 import org.iesfm.airline.repository.PassengerRepository;
 import org.springframework.http.HttpStatus;
@@ -16,11 +16,9 @@ import java.util.List;
 public class FlightController {
 
     private FlightRepository flightRepository;
-    private PassengerRepository passengerRepository;
 
-    public FlightController(FlightRepository flightRepository, PassengerRepository passengerRepository) {
+    public FlightController(FlightRepository flightRepository) {
         this.flightRepository = flightRepository;
-        this.passengerRepository = passengerRepository;
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/flights")

@@ -1,6 +1,7 @@
-package org.iesfm.airline.pojos;
+package org.iesfm.airline;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -15,6 +16,7 @@ public class Flight {
     private int number;
     private String origin;
     private String destination;
+    @JsonFormat(pattern = "yyyy/MM/dd")
     private Date date;
 
     @JsonCreator

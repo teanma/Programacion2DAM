@@ -1,4 +1,4 @@
-package org.iesfm.airline;
+package org.iesfm.airline.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

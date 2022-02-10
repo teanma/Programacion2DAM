@@ -1,4 +1,4 @@
-package org.iesfm.airline.pojos;
+package org.iesfm.airline;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

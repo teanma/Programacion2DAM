@@ -1,6 +1,7 @@
-package org.iesfm.airline.pojos;
+package org.iesfm.airline;
 
-import org.springframework.data.annotation.Id;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
@@ -9,7 +10,10 @@ public class PassengerId implements Serializable {
     private String nif;
     private int number;
 
-    public PassengerId(String nif, int number) {
+    @JsonCreator
+    public PassengerId(
+            @JsonProperty("nif") String nif,
+            @JsonProperty("number") int number) {
         this.nif = nif;
         this.number = number;
     }
