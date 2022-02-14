@@ -12,8 +12,8 @@ public class Baggage {
 
     @JsonCreator
     public Baggage(
-            @JsonProperty("code") int code,
-            @JsonProperty("description") String description) {
+            @JsonProperty(value = "code", required = true) int code,
+            @JsonProperty(value = "description", required = true) String description) {
         this.code = code;
         this.description = description;
     }

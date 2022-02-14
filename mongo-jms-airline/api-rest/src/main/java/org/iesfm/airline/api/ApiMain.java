@@ -9,6 +9,6 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 public class ApiMain {
 
     public static void main(String[] args) {
-        SpringApplication.run(ApiMain.class);
+        SpringApplication.run(ApiMain.class, args);
     }
 }

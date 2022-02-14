@@ -21,10 +21,10 @@ public class Flight {
 
     @JsonCreator
     public Flight(
-            @JsonProperty("number") int number,
-            @JsonProperty("origin") String origin,
-            @JsonProperty("destination") String destination,
-            @JsonProperty("date") Date date) {
+            @JsonProperty(value = "number", required = true) int number,
+            @JsonProperty(value = "origin", required = true) String origin,
+            @JsonProperty(value = "destination", required = true) String destination,
+            @JsonProperty(value = "date", required = true) Date date) {
         this.number = number;
         this.origin = origin;
         this.destination = destination;

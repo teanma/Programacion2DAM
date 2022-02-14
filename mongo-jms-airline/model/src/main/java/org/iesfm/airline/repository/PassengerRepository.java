@@ -4,14 +4,14 @@ import org.iesfm.airline.Passenger;
 import org.iesfm.airline.PassengerId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Component
+@Repository
 public interface PassengerRepository extends MongoRepository<Passenger, PassengerId> {
 
-    void insertToFlight(int number, int passengerId);
+    //void insertToFlight(int number, int passengerId);
 
     @Query("{'passengerId.nif': ?0}")
     List<Passenger> listPassengersFlight(int number);

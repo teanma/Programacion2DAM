@@ -21,12 +21,12 @@ public class Passenger {
 
     @JsonCreator
     public Passenger(
-            @JsonProperty("passengerId") PassengerId passengerId,
-            @JsonProperty("email") String email,
-            @JsonProperty("name") String name,
-            @JsonProperty("surname") String surname,
-            @JsonProperty("seat") String seat,
-            @JsonProperty("baggages") List<Baggage> baggages) {
+            @JsonProperty(value = "passengerId", required = true) PassengerId passengerId,
+            @JsonProperty(value = "email", required = true) String email,
+            @JsonProperty(value = "name", required = true) String name,
+            @JsonProperty(value = "surname", required = true) String surname,
+            @JsonProperty(value = "seat", required = true) String seat,
+            @JsonProperty(value = "baggages", required = true) List<Baggage> baggages) {
         this.passengerId = passengerId;
         this.email = email;
         this.name = name;

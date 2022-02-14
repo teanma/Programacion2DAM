@@ -12,8 +12,8 @@ public class Email {
 
     @JsonCreator
     public Email(
-            @JsonProperty("subject") String subject,
-            @JsonProperty("body") String body) {
+            @JsonProperty(value = "subject", required = true) String subject,
+            @JsonProperty(value = "body", required = true) String body) {
         this.subject = subject;
         this.body = body;
     }

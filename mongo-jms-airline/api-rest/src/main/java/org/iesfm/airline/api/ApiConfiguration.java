@@ -1,6 +1,7 @@
 package org.iesfm.airline.api;
 
-import org.iesfm.airline.listeners.EmailListener;
+import org.iesfm.airline.api.controllers.FlightController;
+import org.iesfm.airline.repository.FlightRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
@@ -26,10 +27,5 @@ public class ApiConfiguration {
         Jackson2ObjectMapperBuilder oMapper = new Jackson2ObjectMapperBuilder();
         oMapper.failOnUnknownProperties(true);
         return oMapper;
-    }
-
-    @Bean
-    public EmailListener emailListener() {
-        return new EmailListener();
     }
 }

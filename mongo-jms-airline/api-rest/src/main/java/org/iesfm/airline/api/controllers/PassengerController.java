@@ -30,13 +30,14 @@ public class PassengerController {
             if (!passengerRepository.existsById(passenger.getPassengerId())) {
                 Flight flight = flightRepository.findByFlightNumber(number);
                 passengerRepository.insert(passenger);
-                jmsTemplate.convertAndSend("airline_emails", new Email(
-                        passenger.getEmail(),
-                        "Binevenido a bordo del vuelo " + flight.getNumber() + "\n"
-                        + "Bienvenido, " + passenger.getName() + passenger.getSurname() + "\n"
-                        + "tu vuelo saldrá el día " + flight.getDate() + " desde " + flight.getOrigin()
-                        + " a " + flight.getDestination() + ". Tu asiento es " + passenger.getSeat() + "\n"
-                        + "No lo pierdas! " + "\n" + "Hasta pronto."
+                jmsTemplate.convertAndSend("airline_emails", new Email("emailpruebas@gmail.com" +
+                        passenger.getEmail() +
+                        "Bienvenido a bordo del vuelo " + flight.getNumber(),
+                        ".\nBienvenido: " + passenger.getName() + " " + passenger.getSurname() +
+                                ".\n Tu vuelo saldrá el día " + flight.getDate() + " desde " + flight.getOrigin() + " a " +
+                                flight.getDestination() + "." +
+                                " Tu asiento es: " + passenger.getSeat() + "." +
+                                "\n No lo pierdas! \n Hasta pronto"
                 ));
             } else {
                 throw new ResponseStatusException(HttpStatus.CONFLICT, "Passenger already exists");
