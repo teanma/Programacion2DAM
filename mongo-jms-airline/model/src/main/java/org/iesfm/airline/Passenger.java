@@ -16,7 +16,7 @@ public class Passenger {
     private String email;
     private String name;
     private String surname;
-    private String seat;
+    private int seat;
     private List<Baggage> baggages;
 
     @JsonCreator
@@ -25,7 +25,7 @@ public class Passenger {
             @JsonProperty(value = "email", required = true) String email,
             @JsonProperty(value = "name", required = true) String name,
             @JsonProperty(value = "surname", required = true) String surname,
-            @JsonProperty(value = "seat", required = true) String seat,
+            @JsonProperty(value = "seat", required = true) int seat,
             @JsonProperty(value = "baggages", required = true) List<Baggage> baggages) {
         this.passengerId = passengerId;
         this.email = email;
@@ -67,11 +67,11 @@ public class Passenger {
         this.surname = surname;
     }
 
-    public String getSeat() {
+    public int getSeat() {
         return seat;
     }
 
-    public void setSeat(String seat) {
+    public void setSeat(int seat) {
         this.seat = seat;
     }
 
@@ -88,7 +88,7 @@ public class Passenger {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Passenger passenger = (Passenger) o;
-        return Objects.equals(passengerId, passenger.passengerId) && Objects.equals(email, passenger.email) && Objects.equals(name, passenger.name) && Objects.equals(surname, passenger.surname) && Objects.equals(seat, passenger.seat) && Objects.equals(baggages, passenger.baggages);
+        return seat == passenger.seat && Objects.equals(passengerId, passenger.passengerId) && Objects.equals(email, passenger.email) && Objects.equals(name, passenger.name) && Objects.equals(surname, passenger.surname) && Objects.equals(baggages, passenger.baggages);
     }
 
     @Override

@@ -8,14 +8,14 @@ import java.io.Serializable;
 public class PassengerId implements Serializable {
 
     private String nif;
-    private int number;
+    private int flightNumber;
 
     @JsonCreator
     public PassengerId(
             @JsonProperty(value = "nif", required = true) String nif,
-            @JsonProperty(value = "number", required = true) int number) {
+            @JsonProperty(value = "flightNumber", required = true) int flightNumber) {
         this.nif = nif;
-        this.number = number;
+        this.flightNumber = flightNumber;
     }
 
     public String getNif() {
@@ -26,11 +26,11 @@ public class PassengerId implements Serializable {
         this.nif = nif;
     }
 
-    public int getNumber() {
-        return number;
+    public int getFlightNumber() {
+        return flightNumber;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setFlightNumber(int flightNumber) {
+        this.flightNumber = flightNumber;
     }
 }

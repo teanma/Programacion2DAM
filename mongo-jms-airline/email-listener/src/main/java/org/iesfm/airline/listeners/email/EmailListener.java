@@ -1,4 +1,4 @@
-package org.iesfm.airline.listeners;
+package org.iesfm.airline.listeners.email;
 
 import org.iesfm.airline.Email;
 import org.slf4j.Logger;
@@ -22,7 +22,8 @@ public class EmailListener {
     @JmsListener(destination = "airline_emails")
     public void onMessage(Email email) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("emailpruebas@gmail.com");
+        message.setFrom("iesfmpruebas@gmail.com");
+        message.setTo(email.getTo());
         message.setSubject(email.getSubject());
         message.setText(email.getBody());
         mailSender.send(message);

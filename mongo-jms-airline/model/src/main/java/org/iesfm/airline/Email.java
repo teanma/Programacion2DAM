@@ -7,15 +7,32 @@ import java.util.Objects;
 
 public class Email {
 
+    private String to;
+    private String from;
     private String subject;
     private String body;
 
-    @JsonCreator
-    public Email(
-            @JsonProperty(value = "subject", required = true) String subject,
-            @JsonProperty(value = "body", required = true) String body) {
+    public Email(String to, String from, String subject, String body) {
+        this.to = to;
+        this.from = from;
         this.subject = subject;
         this.body = body;
+    }
+
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
+
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
     }
 
     public String getSubject() {
@@ -39,11 +56,11 @@ public class Email {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Email email = (Email) o;
-        return Objects.equals(subject, email.subject) && Objects.equals(body, email.body);
+        return Objects.equals(to, email.to) && Objects.equals(from, email.from) && Objects.equals(subject, email.subject) && Objects.equals(body, email.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subject, body);
+        return Objects.hash(to, from, subject, body);
     }
 }

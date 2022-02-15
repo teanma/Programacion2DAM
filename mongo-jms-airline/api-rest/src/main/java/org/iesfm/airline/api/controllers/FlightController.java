@@ -23,7 +23,7 @@ public class FlightController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/flights")
     public void insert(@RequestBody Flight flight) {
-        if(flightRepository.existsById(flight.getNumber())) {
+        if(flightRepository.existsById(flight.getFlightNumber())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Flight already exists");
         } else {
             flightRepository.save(flight);

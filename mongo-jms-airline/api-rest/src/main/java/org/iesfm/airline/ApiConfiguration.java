@@ -1,4 +1,4 @@
-package org.iesfm.airline.api;
+package org.iesfm.airline;
 
 import org.iesfm.airline.api.controllers.FlightController;
 import org.iesfm.airline.repository.FlightRepository;

@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Flight {
 
     @Id
-    private int number;
+    private int flightNumber;
     private String origin;
     private String destination;
     @JsonFormat(pattern = "yyyy/MM/dd")
@@ -21,22 +21,22 @@ public class Flight {
 
     @JsonCreator
     public Flight(
-            @JsonProperty(value = "number", required = true) int number,
+            @JsonProperty(value = "flightNumber", required = true) int flightNumber,
             @JsonProperty(value = "origin", required = true) String origin,
             @JsonProperty(value = "destination", required = true) String destination,
             @JsonProperty(value = "date", required = true) Date date) {
-        this.number = number;
+        this.flightNumber = flightNumber;
         this.origin = origin;
         this.destination = destination;
         this.date = date;
     }
 
-    public int getNumber() {
-        return number;
+    public int getFlightNumber() {
+        return flightNumber;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setFlightNumber(int flightNumber) {
+        this.flightNumber = flightNumber;
     }
 
     public String getOrigin() {
@@ -68,11 +68,13 @@ public class Flight {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Flight flight = (Flight) o;
-        return number == flight.number && Objects.equals(origin, flight.origin) && Objects.equals(destination, flight.destination) && Objects.equals(date, flight.date);
+        return flightNumber == flight.flightNumber && Objects.equals(origin, flight.origin) && Objects.equals(destination, flight.destination) && Objects.equals(date, flight.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number, origin, destination, date);
+        return Objects.hash(flightNumber, origin, destination, date);
     }
+
+
 }

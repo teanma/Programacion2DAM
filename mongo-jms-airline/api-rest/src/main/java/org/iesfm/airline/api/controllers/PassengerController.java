@@ -24,15 +24,15 @@ public class PassengerController {
         this.jmsTemplate = jmsTemplate;
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/flights/{number}/passengers")
-    public void insertPassengerToFlight(@PathVariable("number") int number, @RequestBody Passenger passenger) {
-        if (flightRepository.existsById(number)) {
+    @RequestMapping(method = RequestMethod.POST, path = "/flights/{flightNumber}/passengers")
+    public void insertPassengerToFlight(@PathVariable("flightNumber") int flightNumber, @RequestBody Passenger passenger) {
+        if (flightRepository.existsById(flightNumber)) {
             if (!passengerRepository.existsById(passenger.getPassengerId())) {
-                Flight flight = flightRepository.findByFlightNumber(number);
+                Flight flight = flightRepository.findByFlightNumber(flightNumber);
                 passengerRepository.insert(passenger);
-                jmsTemplate.convertAndSend("airline_emails", new Email("emailpruebas@gmail.com" +
-                        passenger.getEmail() +
-                        "Bienvenido a bordo del vuelo " + flight.getNumber(),
+                jmsTemplate.convertAndSend("airline_emails", new Email(passenger.getEmail(),
+                        "iesfmpruebas@gmail.com",
+                        "Bienvenido a bordo del vuelo " + flight.getFlightNumber(),
                         ".\nBienvenido: " + passenger.getName() + " " + passenger.getSurname() +
                                 ".\n Tu vuelo saldrá el día " + flight.getDate() + " desde " + flight.getOrigin() + " a " +
                                 flight.getDestination() + "." +
@@ -48,19 +48,19 @@ public class PassengerController {
         }
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/flights/{number}/passengers")
-    public List<Passenger> listPassengersFlight(@PathVariable("number") int number) {
-        if (!flightRepository.existsById(number)) {
+    @RequestMapping(method = RequestMethod.GET, path = "/flights/{flightNumber}/passengers")
+    public List<Passenger> listPassengersFlight(@PathVariable("flightNumber") int flightNumber) {
+        if (!flightRepository.existsById(flightNumber)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Flight not found");
         }
-        return passengerRepository.listPassengersFlight(number);
+        return passengerRepository.listPassengersFlight(flightNumber);
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/flights/{number}/passengers/{nif}/baggages")
-    public void insertBaggageToPassenger(@PathVariable("nif") String nif, @PathVariable("number") int number, @RequestBody Baggage baggage) {
-        if(flightRepository.existsById(number)) {
-            if (passengerRepository.existsById(new PassengerId(nif, number))) {
-                Passenger passenger = passengerRepository.findByPassengerId(new PassengerId(nif, number));
+    @RequestMapping(method = RequestMethod.POST, path = "/flights/{flightNumber}/passengers/{nif}/baggages")
+    public void insertBaggageToPassenger(@PathVariable("nif") String nif, @PathVariable("number") int flightNumber, @RequestBody Baggage baggage) {
+        if(flightRepository.existsById(flightNumber)) {
+            if (passengerRepository.existsById(new PassengerId(nif, flightNumber))) {
+                Passenger passenger = passengerRepository.findByPassengerId(new PassengerId(nif, flightNumber));
                 List<Baggage> baggages = new LinkedList<>();
                 baggages.add(baggage);
                 passenger.setBaggages(baggages);
@@ -74,11 +74,11 @@ public class PassengerController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "passengers/{nif}/baggages")
-    public List<Baggage> listPassengerBaggages(String nif, int number) {
-        if(!passengerRepository.existsById(new PassengerId(nif, number))) {
+    public List<Baggage> listPassengerBaggages(String nif, int flightNumber) {
+        if(!passengerRepository.existsById(new PassengerId(nif, flightNumber))) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Passenger not found");
         }
-        Passenger passenger = passengerRepository.findByPassengerId(new PassengerId(nif, number));
+        Passenger passenger = passengerRepository.findByPassengerId(new PassengerId(nif, flightNumber));
         return passenger.getBaggages();
     }
 }
