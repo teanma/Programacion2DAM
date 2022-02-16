@@ -32,12 +32,13 @@ public class PassengerController {
                 passengerRepository.insert(passenger);
                 jmsTemplate.convertAndSend("airline_emails", new Email(passenger.getEmail(),
                         "iesfmpruebas@gmail.com",
-                        "Bienvenido a bordo del vuelo " + flight.getFlightNumber(),
-                        ".\nBienvenido: " + passenger.getName() + " " + passenger.getSurname() +
-                                ".\n Tu vuelo saldrá el día " + flight.getDate() + " desde " + flight.getOrigin() + " a " +
-                                flight.getDestination() + "." +
-                                " Tu asiento es: " + passenger.getSeat() + "." +
-                                "\n No lo pierdas! \n Hasta pronto"
+                        "Bienvenido a bordo del vuelo " + flight.getFlightNumber() + "\n",
+                        "Bienvenido: " + passenger.getName() + " " + passenger.getSurname() + "," + "\n"
+                                + "Tu vuelo saldra el dia " + flight.getDate() + " "
+                                + "desde " + flight.getOrigin() + " a " + flight.getDestination() + "." + "\n"
+                                + "Tu asiento es: " + passenger.getSeat() + "." + "\n"
+                                + "No lo pierdas!" + "\n"
+                                + "Hasta pronto"
                 ));
             } else {
                 throw new ResponseStatusException(HttpStatus.CONFLICT, "Passenger already exists");
@@ -57,7 +58,7 @@ public class PassengerController {
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/flights/{flightNumber}/passengers/{nif}/baggages")
-    public void insertBaggageToPassenger(@PathVariable("nif") String nif, @PathVariable("number") int flightNumber, @RequestBody Baggage baggage) {
+    public void insertBaggageToPassenger(@PathVariable("nif") String nif, @PathVariable("flightNumber") int flightNumber, @RequestBody Baggage baggage) {
         if(flightRepository.existsById(flightNumber)) {
             if (passengerRepository.existsById(new PassengerId(nif, flightNumber))) {
                 Passenger passenger = passengerRepository.findByPassengerId(new PassengerId(nif, flightNumber));
@@ -73,8 +74,8 @@ public class PassengerController {
         }
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "passengers/{nif}/baggages")
-    public List<Baggage> listPassengerBaggages(String nif, int flightNumber) {
+    @RequestMapping(method = RequestMethod.GET, path = "flights/{flightNumber}/passengers/{nif}/baggages")
+    public List<Baggage> listPassengerBaggages(@PathVariable("nif") String nif, @PathVariable("flightNumber") int flightNumber) {
         if(!passengerRepository.existsById(new PassengerId(nif, flightNumber))) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Passenger not found");
         }

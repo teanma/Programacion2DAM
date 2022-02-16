@@ -13,8 +13,8 @@ public interface PassengerRepository extends MongoRepository<Passenger, Passenge
 
     //void insertToFlight(int number, int passengerId);
 
-    @Query("{'passengerId.nif': ?0}")
-    List<Passenger> listPassengersFlight(int number);
+    @Query("{'passengerId.flightNumber': ?0}")
+    List<Passenger> listPassengersFlight(int flightNumber);
 
     Passenger findByPassengerId(PassengerId passengerId);
 }

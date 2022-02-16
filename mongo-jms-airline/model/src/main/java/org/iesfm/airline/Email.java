@@ -12,7 +12,12 @@ public class Email {
     private String subject;
     private String body;
 
-    public Email(String to, String from, String subject, String body) {
+    @JsonCreator
+    public Email(
+            @JsonProperty(value = "to", required = true) String to,
+            @JsonProperty(value = "from", required = true) String from,
+            @JsonProperty(value = "subject", required = true) String subject,
+            @JsonProperty(value = "body", required = true) String body) {
         this.to = to;
         this.from = from;
         this.subject = subject;

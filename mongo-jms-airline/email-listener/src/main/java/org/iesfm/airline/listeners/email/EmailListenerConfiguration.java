@@ -1,4 +1,4 @@
-package org.iesfm.airline.listeners;
+package org.iesfm.airline.listeners.email;
 
 import org.iesfm.airline.listeners.email.EmailListener;
 import org.springframework.beans.factory.annotation.Value;
@@ -48,10 +48,5 @@ public class EmailListenerConfiguration {
         converter.setTargetType(MessageType.TEXT);
         converter.setTypeIdPropertyName("_type");
         return converter;
-    }
-
-    @Bean
-    public EmailListener emailListener(JavaMailSender javaMailSender) {
-        return new EmailListener(javaMailSender);
     }
 }
