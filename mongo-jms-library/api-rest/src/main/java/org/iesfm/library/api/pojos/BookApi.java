@@ -1,21 +1,24 @@
-package org.iesfm.library.pojos;
+package org.iesfm.library.api.pojos;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 import java.util.Objects;
 
-@Document(collection = "books")
-public class Book {
+public class BookApi {
 
-    @Id
     private String isbn;
     private String title;
     private String author;
     private List<String> genres;
 
-    public Book(String isbn, String title, String author, List<String> genres) {
+    @JsonCreator
+    public BookApi(
+            @JsonProperty("isbn") String isbn,
+            @JsonProperty("title") String title,
+            @JsonProperty("author") String author,
+            @JsonProperty("genres") List<String> genres) {
         this.isbn = isbn;
         this.title = title;
         this.author = author;
@@ -58,12 +61,14 @@ public class Book {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Book book = (Book) o;
-        return Objects.equals(isbn, book.isbn) && Objects.equals(title, book.title) && Objects.equals(author, book.author) && Objects.equals(genres, book.genres);
+        BookApi bookApi = (BookApi) o;
+        return Objects.equals(isbn, bookApi.isbn) && Objects.equals(title, bookApi.title) && Objects.equals(author, bookApi.author) && Objects.equals(genres, bookApi.genres);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(isbn, title, author, genres);
     }
+
+
 }
