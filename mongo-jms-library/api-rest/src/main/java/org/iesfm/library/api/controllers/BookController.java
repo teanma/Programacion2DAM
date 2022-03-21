@@ -1,13 +1,15 @@
 package org.iesfm.library.api.controllers;
 
-import org.iesfm.library.exceptions.MemberNotFoundException;
-import org.iesfm.library.pojos.Book;
-import org.iesfm.library.pojos.BookLend;
-import org.iesfm.library.services.BookService;
+import org.iesfm.library.Book;
+import org.iesfm.library.BookLend;
+import org.iesfm.library.Member;
+import org.iesfm.library.api.pojos.MemberApi;
+import org.iesfm.library.servicies.BookService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @RestController
@@ -19,11 +21,22 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/books")
+    /*@RequestMapping(method = RequestMethod.POST, path = "/books")
     public void insert(@RequestBody Book book) {
         if(!bookService.insert(book)) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Book already exists");
         }
+    }
+
+    private Member convert(MemberApi member) {
+        return new Member(
+                member.getNif(),
+                member.getName(),
+                member.getSurname(),
+                member.getEmail(),
+                member.getPhone(),
+                new LinkedList<>()
+        );
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/books")
@@ -37,5 +50,5 @@ public class BookController {
         } catch (MemberNotFoundException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Member " + e.getNif() + " not found");
         }
-    }
+    }*/
 }

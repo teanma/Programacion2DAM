@@ -1,4 +1,4 @@
-package org.iesfm.library.api.controllers.pojos;
+package org.iesfm.library.api.pojos;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -15,11 +15,11 @@ public class MemberApi {
 
     @JsonCreator
     public MemberApi(
-            @JsonProperty("nif") String nif,
-            @JsonProperty("name") String name,
-            @JsonProperty("surname") String surname,
-            @JsonProperty("email") String email,
-            @JsonProperty("phone") String phone) {
+            @JsonProperty(value = "nif", required = true) String nif,
+            @JsonProperty(value = "name", required = true) String name,
+            @JsonProperty(value = "surname", required = true) String surname,
+            @JsonProperty(value = "email", required = true) String email,
+            @JsonProperty(value = "phone", required = true) String phone) {
         this.nif = nif;
         this.name = name;
         this.surname = surname;

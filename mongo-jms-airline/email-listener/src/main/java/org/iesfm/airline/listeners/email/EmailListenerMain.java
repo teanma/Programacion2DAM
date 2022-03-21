@@ -1,4 +1,4 @@
-package org.iesfm.airline.listeners;
+package org.iesfm.airline.listeners.email;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;

@@ -1,4 +1,4 @@
-package org.iesfm.library.api.controllers.pojos;
+package org.iesfm.library.api.pojos;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

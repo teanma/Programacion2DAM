@@ -1,4 +1,4 @@
-package org.iesfm.library.pojos;
+package org.iesfm.library;
 
 import java.util.Objects;
 

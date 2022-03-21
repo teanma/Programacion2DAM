@@ -1,7 +1,6 @@
-package org.iesfm.library.repository;
+package org.iesfm.library.repositories;
 
-import org.iesfm.library.pojos.Book;
-import org.iesfm.library.pojos.BookLend;
+import org.iesfm.library.Book;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Component;
 
